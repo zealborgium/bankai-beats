@@ -6,9 +6,10 @@ interface PageHeroProps {
   title: string;
   highlight: string;
   subtitle: string;
+  centered?: boolean;
 }
 
-const PageHero = ({ title, highlight, subtitle }: PageHeroProps) => (
+const PageHero = ({ title, highlight, subtitle, centered = false }: PageHeroProps) => (
   <section className="relative min-h-[30vh] flex items-end overflow-hidden">
     <div className="section-container relative z-10 pb-10 pt-24 w-full">
       <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
@@ -16,7 +17,7 @@ const PageHero = ({ title, highlight, subtitle }: PageHeroProps) => (
           <ArrowLeft size={16} /> Back to Home
         </Link>
       </motion.div>
-      <div className="card-warm">
+      <div className={`card-warm${centered ? " text-center flex flex-col items-center" : ""}`}>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

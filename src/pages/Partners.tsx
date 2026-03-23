@@ -2,7 +2,6 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import PartnerDialog from "@/components/PartnerDialog";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import PageHero from "@/components/PageHero";
@@ -27,8 +26,7 @@ const Partners = () => {
   const formRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [selectedPartner, setSelectedPartner] = useState("");
-  const [formOpen, setFormOpen] = useState(false);
+  const [selectedPartner, setSelectedPartner] = useState("");  const [formOpen, setFormOpen] = useState(false);
   const location = useLocation();
 
   const handlePartnerClick = () => {
@@ -100,8 +98,7 @@ const Partners = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.2 + i * 0.06 }}
-                  className="card-inner cursor-pointer overflow-hidden group text-center w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
-                  onClick={() => { setSelectedPartner(opp.title); setDialogOpen(true); }}
+                  className="card-inner overflow-hidden group text-center w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
                 >
                   <div className="w-full h-36 overflow-hidden mb-4 -mt-1 rounded-xl">
                     <img
@@ -148,8 +145,6 @@ const Partners = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <PartnerDialog open={dialogOpen} onOpenChange={setDialogOpen} partnerType={selectedPartner} />
 
       <Footer />
     </div>

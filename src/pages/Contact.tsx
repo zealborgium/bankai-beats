@@ -10,6 +10,7 @@ const Contact = () => (
       title="Contact"
       highlight="Us"
       subtitle="Have a question, a partnership idea, or just want to say hi? We'd love to hear from you."
+      centered
     />
     <ContactForm page="Contact" />
     <Footer />
