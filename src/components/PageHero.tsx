@@ -10,7 +10,6 @@ interface PageHeroProps {
 
 const PageHero = ({ title, highlight, subtitle }: PageHeroProps) => (
   <section className="relative min-h-[30vh] flex items-end overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-neon-red/5 via-background to-neon-purple/5" />
     <div className="section-container relative z-10 pb-10 pt-24 w-full">
       <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
         <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8 font-mono uppercase tracking-wider">

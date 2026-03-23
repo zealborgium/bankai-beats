@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
+import ContactCTA from "@/components/ContactCTA";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -116,7 +116,7 @@ const FAQ = () => {
         </div>
       </section>
 
-      <ContactForm page="FAQ" />
+      <ContactCTA />
       <Footer />
     </div>
   );

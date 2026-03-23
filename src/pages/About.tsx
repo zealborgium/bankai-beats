@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
-import ContactForm from "@/components/ContactForm";
+import ContactCTA from "@/components/ContactCTA";
 
 const values = [
   { title: "Community First", desc: "Every decision we make starts with what's best for the fans. We listen, we adapt, and we build together." },
@@ -233,7 +233,7 @@ const About = () => {
         </div>
       </section>
 
-      <ContactForm page="About" />
+      <ContactCTA />
       <Footer />
     </div>
   );

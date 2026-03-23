@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ContactForm from "@/components/ContactForm";
+import ContactCTA from "@/components/ContactCTA";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -11,8 +11,8 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <ContactForm />
       <CTASection />
+      <ContactCTA />
       <Footer />
     </div>
   );

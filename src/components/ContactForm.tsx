@@ -18,9 +18,11 @@ const interestOptions = [
 
 interface ContactFormProps {
   page?: string;
+  excludeOptions?: string[];
+  heading?: React.ReactNode;
 }
 
-const ContactForm = ({ page = "Homepage" }: ContactFormProps) => {
+const ContactForm = ({ page = "Homepage", excludeOptions = [], heading }: ContactFormProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -92,7 +94,7 @@ const ContactForm = ({ page = "Homepage" }: ContactFormProps) => {
           <div className="text-center mb-8">
             <span className="section-label">Get Involved</span>
             <h2 className="section-title">
-              Still have <span className="text-neon-purple glow-text-purple">questions?</span>
+              {heading ?? <><span className="text-neon-purple glow-text-purple">Contact</span> Us</>}
             </h2>
             <p className="text-muted-foreground text-base">
               Leave your details and we'll get in touch to explore
@@ -134,11 +136,12 @@ const ContactForm = ({ page = "Homepage" }: ContactFormProps) => {
               </div>
               <div>
                 <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">
-                  Phone
+                  Phone *
                 </label>
                 <input
                   type="tel"
                   name="phone"
+                  required
                   value={formData.phone}
                   onChange={handleChange}
                   className={inputClasses}
@@ -175,7 +178,7 @@ const ContactForm = ({ page = "Homepage" }: ContactFormProps) => {
                 className={inputClasses}
               >
                 <option value="">Select your interest</option>
-                {interestOptions.map((opt) => (
+                {interestOptions.filter(opt => !excludeOptions.includes(opt)).map((opt) => (
                   <option key={opt} value={opt}>
                     {opt}
                   </option>

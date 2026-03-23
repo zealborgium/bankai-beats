@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
+import ContactCTA from "@/components/ContactCTA";
 import PageHero from "@/components/PageHero";
 
 const zones = [
@@ -72,7 +72,7 @@ const Experience = () => {
         </div>
       </section>
 
-      <ContactForm page="Experience" />
+      <ContactCTA />
       <Footer />
     </div>
   );

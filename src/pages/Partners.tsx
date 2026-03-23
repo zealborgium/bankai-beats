@@ -1,5 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import PartnerDialog from "@/components/PartnerDialog";
 import Footer from "@/components/Footer";
@@ -23,9 +23,23 @@ const opportunities = [
 
 const Partners = () => {
   const ref = useRef(null);
+  const formRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedPartner, setSelectedPartner] = useState("");
+  const [formOpen, setFormOpen] = useState(false);
+
+  const handlePartnerClick = () => {
+    setFormOpen(true);
+    setTimeout(() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+  };
+
+  useEffect(() => {
+    if (window.location.hash === "#contact-form") {
+      setFormOpen(true);
+      setTimeout(() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 300);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
@@ -112,12 +126,26 @@ const Partners = () => {
             <p className="text-base text-muted-foreground mb-8">
               BANKAI BEATS aims to become India's flagship Asian pop culture festival. Be an early partner.
             </p>
-            <a href="#interest-form" className="btn-primary">Partner With Us</a>
+            <a onClick={handlePartnerClick} className="btn-primary cursor-pointer">Partner With Us</a>
           </div>
         </div>
       </section>
 
-      <ContactForm page="Partners" />
+      {/* Contact Form - expands below CTA when triggered */}
+      <AnimatePresence>
+        {formOpen && (
+          <motion.div
+            ref={formRef}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <ContactForm page="Partners" excludeOptions={["Fan / Attendee"]} heading={<><span className="text-neon-purple glow-text-purple">Partner</span> With Us</>} />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <PartnerDialog open={dialogOpen} onOpenChange={setDialogOpen} partnerType={selectedPartner} />
 

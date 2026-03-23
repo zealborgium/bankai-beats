@@ -17,9 +17,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="flex justify-center mb-4 md:mb-8">
+          className="flex justify-center mb-4 md:mb-8 mt-24 md:mt-32">
           
-          <img src={bankaiLogo} alt="Bankai Beats" className="h-16 sm:h-20 md:h-32 object-contain" />
+          <img src={bankaiLogo} alt="Bankai Beats" className="h-24 sm:h-32 md:h-48 object-contain" />
         </motion.div>
 
         {/* Main heading */}
@@ -27,7 +27,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.7 }}
-          className="text-center text-xl sm:text-2xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight leading-[1.1] mx-auto">
+          className="text-center text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-[1.1] mx-auto">
           <span className="text-foreground">India's First </span>
           <span className="text-neon-red glow-text-red">Anime</span>
           <span className="text-foreground"> & </span>
@@ -45,15 +45,41 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            className="relative px-6 h-30 flex items-center justify-center rounded-full backdrop-blur-sm text-black border-solid border-white border-2 bg-primary"
+            className="relative px-6 py-4 flex items-center justify-center rounded-full backdrop-blur-sm text-black border-solid border-white border-2 bg-primary"
             style={{ boxShadow: '0 0 15px hsla(0, 0%, 100%, 0.5), 0 0 30px hsla(0, 0%, 100%, 0.3), 0 0 60px hsla(0, 0%, 100%, 0.2), 0 0 100px hsla(0, 0%, 100%, 0.1), inset 0 0 20px hsla(0, 0%, 100%, 0.1)', background: 'hsla(0, 0%, 100%, 0.08)' }}>
 
-          <span className="text-sm sm:text-base tracking-widest uppercase font-bold md:text-2xl font-sans text-white"
+          <span className="text-3xl sm:text-4xl tracking-widest uppercase font-bold md:text-6xl font-sans text-white"
             style={{ textShadow: 'none' }}>COMING SOON!
 
           </span>
           </motion.div>
         </div>
+
+        {/* Pre-Registration Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0, duration: 0.5 }}
+          className="mt-10 md:mt-12 mb-24 md:mb-32">
+          <a
+            href="#"
+            className="inline-flex items-center justify-center px-8 py-4 font-bold transition-all duration-300 text-base sm:text-lg md:text-xl tracking-wide uppercase rounded-full text-white"
+            style={{
+              background: 'hsl(142 70% 40%)',
+              boxShadow: '0 4px 16px hsl(142 70% 40% / 0.4)',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 6px 24px hsl(142 70% 40% / 0.6)';
+              (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 4px 16px hsl(142 70% 40% / 0.4)';
+              (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)';
+            }}
+          >
+            Pre-Registration Open
+          </a>
+        </motion.div>
 
       </div>
 

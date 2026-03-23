@@ -10,6 +10,7 @@ const navItems = [
   { label: "Partners", href: "/partners" },
   
   { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -81,7 +82,7 @@ const Navbar = () => {
               </a>
             )
           )}
-          <Link to="/#interest-form" className="btn-primary py-2.5 px-6">
+          <Link to="/partners#contact-form" className="btn-primary py-2.5 px-6">
             Partner With Us
           </Link>
         </div>
@@ -131,7 +132,7 @@ const Navbar = () => {
                 )
               )}
               <Link
-                to="/#interest-form"
+                to="/partners#contact-form"
                 onClick={() => setIsMobileOpen(false)}
                 className="btn-primary py-2.5 px-6 text-center"
               >
