@@ -1,5 +1,6 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import PartnerDialog from "@/components/PartnerDialog";
 import Footer from "@/components/Footer";
@@ -28,6 +29,7 @@ const Partners = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedPartner, setSelectedPartner] = useState("");
   const [formOpen, setFormOpen] = useState(false);
+  const location = useLocation();
 
   const handlePartnerClick = () => {
     setFormOpen(true);
@@ -35,11 +37,11 @@ const Partners = () => {
   };
 
   useEffect(() => {
-    if (window.location.hash === "#contact-form") {
+    if (location.hash === "#contact-form") {
       setFormOpen(true);
       setTimeout(() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 300);
     }
-  }, []);
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
@@ -142,7 +144,7 @@ const Partners = () => {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <ContactForm page="Partners" excludeOptions={["Fan / Attendee"]} heading={<><span className="text-neon-purple glow-text-purple">Partner</span> With Us</>} />
+            <ContactForm page="Partners" excludeOptions={["Fan / Attendee"]} heading={<><span className="text-neon-purple glow-text-purple">Partner</span> With Us</>} usePartnersSheet />
           </motion.div>
         )}
       </AnimatePresence>

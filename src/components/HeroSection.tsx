@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import bankaiLogo from "@/assets/bb-white-text.png";
+import PreRegistrationForm from "@/components/PreRegistrationForm";
 
 const HeroSection = () => {
+  const [preRegOpen, setPreRegOpen] = useState(false);
   return (
     <section
       id="hero"
@@ -63,6 +66,7 @@ const HeroSection = () => {
           className="mt-10 md:mt-12 mb-24 md:mb-32">
           <a
             href="#"
+            onClick={(e) => { e.preventDefault(); setPreRegOpen(true); }}
             className="inline-flex items-center justify-center px-8 py-4 font-bold transition-all duration-300 text-base sm:text-lg md:text-xl tracking-wide uppercase rounded-full text-white"
             style={{
               background: 'hsl(142 70% 40%)',
@@ -82,6 +86,8 @@ const HeroSection = () => {
         </motion.div>
 
       </div>
+
+      <PreRegistrationForm open={preRegOpen} onClose={() => setPreRegOpen(false)} />
 
       {/* Sponsor marquee */}
       <div className="w-full overflow-hidden py-4 mt-auto" style={{ borderTop: '1px solid hsla(0, 0%, 100%, 0.1)', borderBottom: '1px solid hsla(0, 0%, 100%, 0.1)', background: 'hsla(0, 0%, 100%, 0.04)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>

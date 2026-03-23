@@ -3,8 +3,8 @@ import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { CheckCircle, X } from "lucide-react";
 
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbw5Xf5DJDWNpXLwYPPcYY-EKigbV_b6G72V92r__tLNwKvTN4k8N_vl9UUSz4J4y0uLMw/exec";
+const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_33D4K8X8Q0jfYnCtmRndqf6-zm4wwn0JNjygoW031batBGg6Gg7ywJGqaRETPmb8-g/exec";
+const PARTNERS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJhd5l9OUn8G0Ou-M61XIY7Ot7-o26O2e4hKDxXz3ezImp6z4e8_Qb8M5fCX8gj0Ud/exec";
 
 const interestOptions = [
   "Investor",
@@ -20,9 +20,10 @@ interface ContactFormProps {
   page?: string;
   excludeOptions?: string[];
   heading?: React.ReactNode;
+  usePartnersSheet?: boolean;
 }
 
-const ContactForm = ({ page = "Homepage", excludeOptions = [], heading }: ContactFormProps) => {
+const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartnersSheet = false }: ContactFormProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,7 +56,7 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading }: Contac
     setIsSubmitting(true);
 
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(usePartnersSheet ? PARTNERS_SCRIPT_URL : CONTACT_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },

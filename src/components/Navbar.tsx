@@ -35,6 +35,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handlePartnerWithUs = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === "/partners") {
+      // Already on partners — force hash update to trigger useEffect
+      window.history.replaceState(null, "", "/partners");
+      setTimeout(() => navigate("/partners#contact-form"), 10);
+    } else {
+      navigate("/partners#contact-form");
+    }
+    setIsMobileOpen(false);
+  };
+
   const isActive = (href: string) => {
     if (href.startsWith("/#")) return location.pathname === "/";
     return location.pathname === href;
@@ -82,9 +94,9 @@ const Navbar = () => {
               </a>
             )
           )}
-          <Link to="/partners#contact-form" className="btn-primary py-2.5 px-6">
+          <a onClick={handlePartnerWithUs} className="btn-primary py-2.5 px-6 cursor-pointer">
             Partner With Us
-          </Link>
+          </a>
         </div>
 
         <button
@@ -131,13 +143,12 @@ const Navbar = () => {
                   </a>
                 )
               )}
-              <Link
-                to="/partners#contact-form"
-                onClick={() => setIsMobileOpen(false)}
-                className="btn-primary py-2.5 px-6 text-center"
+              <a
+                onClick={handlePartnerWithUs}
+                className="btn-primary py-2.5 px-6 text-center cursor-pointer"
               >
                 Partner With Us
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

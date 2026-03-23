@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ContactCTA = () => (
   <section className="relative min-h-[30vh] flex items-end overflow-hidden">
     <div className="section-container relative z-10 pb-10 pt-24 w-full">
-      <div className="card-warm">
+      <div className="card-warm text-center flex flex-col items-center">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
