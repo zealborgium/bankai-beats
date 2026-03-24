@@ -150,7 +150,7 @@ const About = () => {
                 India is at an inflection point. The anime and K-pop fandom here is not just growing. It is becoming one of the most powerful youth culture forces in the world. We are not here to ride that wave. We are here to lead it.
               </p>
               <p>
-                BANKAI BEATS starts in Delhi. But the vision goes far beyond one city and one festival. We are building a live entertainment brand that grows with the community, pushes the boundaries of what a music festival can be, and creates new benchmarks for Asian pop culture events in India every single year.
+                BANKAI BEATS begins with a single launch. But the vision goes far beyond one city and one festival. We are building a live entertainment brand that grows with the community, pushes the boundaries of what a music festival can be, and creates new benchmarks for Asian pop culture events in India every single year.
               </p>
               <p>
                 More cities. Bigger headliners. New experiences that have never been done before in this country. And a community that gets stronger, louder, and more connected with every edition.

@@ -15,7 +15,7 @@ const faqs = [
       { question: "When and where is BANKAI BEATS happening?", answer: "Date and venue will be released soon. Follow our Instagram at @bankaibeatsfest to be the first to know." },
       { question: "Who organises BANKAI BEATS?", answer: "BANKAI BEATS is organised by Dellusion Entertainment, a live experience company born inside the anime and K-pop fandom." },
       { question: "Is this a one-time event or will it happen every year?", answer: "BANKAI BEATS is built to grow. The 2026 edition is the pilot. Future editions are planned across multiple cities in India with bigger lineups, more zones, and a larger community every year." },
-      { question: "What age group is this festival for?", answer: "BANKAI BEATS is open to all age groups. The festival is primarily designed for the 16 to 30 age group but welcomes anyone who loves the culture. Those below the age of 16 are need to be accompanied by a guardian and both need to purchase a pass. Please note the Live Bar is strictly for guests of legal drinking age." },
+      { question: "What age group is this festival for?", answer: "BANKAI BEATS is open to all age groups. The festival is primarily designed for the 16 to 30 age group but welcomes anyone who loves the culture. Those below the age of 16 are needed to be accompanied by a guardian and both need to purchase a pass. Free entry for ages 6 and below. Please note the Live Bar is strictly for guests of legal drinking age." },
     ],
   },
   {

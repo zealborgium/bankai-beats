@@ -51,7 +51,7 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.5 }}
             className="relative px-6 py-4 flex items-center justify-center rounded-full backdrop-blur-sm text-black border-solid border-white border-2 bg-primary"
             style={{ boxShadow: '0 0 15px hsla(0, 0%, 100%, 0.5), 0 0 30px hsla(0, 0%, 100%, 0.3), 0 0 60px hsla(0, 0%, 100%, 0.2), 0 0 100px hsla(0, 0%, 100%, 0.1), inset 0 0 20px hsla(0, 0%, 100%, 0.1)', background: 'hsla(0, 0%, 100%, 0.08)' }}>
-          <span className="text-3xl sm:text-4xl tracking-widest uppercase font-bold md:text-6xl font-sans text-white"
+          <span className="text-xl sm:text-2xl tracking-widest uppercase font-bold md:text-4xl font-sans text-white"
             style={{ textShadow: 'none' }}>COMING SOON!
           </span>
           </motion.div>

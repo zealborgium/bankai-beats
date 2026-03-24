@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import bankaiLogo from "@/assets/bb-white-text.png";
+import bankaiLogo from "@/assets/HORIZONTAL_White_Red Eyes.png";
 
 const navItems = [
   { label: "About", href: "/about" },

@@ -144,6 +144,7 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
                       <option value="">Select your fandom</option>
                       <option>Anime</option>
                       <option>K-Pop</option>
+                      <option>Anime & K-Pop</option>
                       <option>Other</option>
                     </select>
                   </div>
