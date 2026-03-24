@@ -38,7 +38,7 @@ const About = () => {
       <PageHero
         title="About"
         highlight="Us"
-        subtitle="Every festival has an origin story. Ours started with a fandom that deserved better. Built by fans. Backed by experience. This is the story behind India's First Anime & K-Pop Music Festival."
+        subtitle="Every festival has an origin story. Ours started with fandoms that deserved better. Built by fans. Backed by experience. This is the story behind India's First Anime & K-Pop Music Festival."
       />
 
       {/* Dellusion Entertainment */}
@@ -82,16 +82,16 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                It isn't a convention. It isn't a concert. It's something India has never had before. A full-scale Music Festival built entirely around Anime and K-pop culture. Conventions give you stalls. Concerts give you one artist. BANKAI BEATS gives you both and then some. International headliners flying in from Korea and Japan. A cosplay championship that belongs on the main stage. 15,000+ fans under one sky. One day. One stage. One festival that changes everything.
+                It isn't a convention. It isn't a concert. It's something India has never had before. A full-scale Music Festival built entirely around Anime and K-pop culture. International headliners flying in from Korea and Japan. Cosplay Championship & Dance Battle on the main stage. 15,000+ fans. One day. One stage. One festival that changes everything.
               </p>
               <p>
                 India's Anime and K-pop fandom is one of the fastest growing in the world. Millions of fans, hundreds of communities, and years of passion with nowhere near enough to show for it on the live events stage. BANKAI BEATS was built to change that. Built by fans who were tired of waiting. Built for a community that has always deserved better.
               </p>
               <p>
-                Step inside and you will find a world built entirely around the culture you love. International K-pop & J-pop headliners performing on a massive stage. A fully transparent cosplay championship with the platform it has always deserved. Kimono and hanbok trial zones. Authentic ramen and Korean BBQ. 40+ merch stalls. 25+ food stalls. Karaoke rooms, fan meetups, gaming zone, bar setup, and energy that does not stop from the moment the gates open to the final note of the night.
+                Step inside and you will find a world built entirely around the culture you love. International K-pop & J-pop headliners performing on a massive stage. A fully transparent Cosplay Championship & Dance Battle with the platform they have always deserved. Kimono and hanbok trial zones. Authentic Korean & Japanese food. 40+ merchandise stalls. 25+ food stalls. Karaoke rooms, fan meetups, gaming zone, Live music & DJ, bar setup, and energy that does not stop from the moment the gates open to the final note of the night.
               </p>
               <p>
-                This is not just a festival. It is the moment the anime and K-pop community in India has been building toward.
+                This is not just a festival. It is the moment the K-pop & Anime community in India has been building toward.
               </p>
               <p>
                 The pilot festival date and venue will be announced soon with future editions planned for multiple cities across India.

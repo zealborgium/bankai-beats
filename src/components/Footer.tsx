@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Mail } from "lucide-react";
+import { toast } from "sonner";
 import dellusionLogo from "@/assets/dellusion-full-logo.png";
 
 const navLinks = [
@@ -10,19 +11,21 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const Footer = () => (
+const Footer = () => {
+  const copyEmail = () => {
+    navigator.clipboard.writeText("contact@dellusion.in");
+    toast.success("Email copied to clipboard!");
+  };
+
+  return (
   <footer className="py-10" style={{ borderTop: '1px solid hsla(0, 0%, 100%, 0.1)', background: 'hsla(0, 0%, 100%, 0.04)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
     <div className="section-container">
       <div className="flex items-start justify-between flex-wrap gap-4">
         <div className="flex flex-col items-center gap-3">
           <p className="text-sm font-mono uppercase tracking-wider text-neon-purple glow-text-purple mb-1">Connect</p>
           <div className="flex items-center gap-4">
-            <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"><Instagram size={20} /></span>
-            <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"><Facebook size={20} /></span>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"><Twitter size={20} /></span>
-            <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"><Mail size={20} /></span>
+            <a href="https://www.instagram.com/bankaibeatsfest/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={20} /></a>
+            <span onClick={copyEmail} className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"><Mail size={20} /></span>
           </div>
         </div>
         <div className="flex flex-col items-center gap-2">
@@ -46,6 +49,7 @@ const Footer = () => (
       </p>
     </div>
   </footer>
-);
+  );
+};
 
 export default Footer;

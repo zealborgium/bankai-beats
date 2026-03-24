@@ -12,10 +12,10 @@ const faqs = [
     category: "General",
     items: [
       { question: "What is BANKAI BEATS?", answer: "BANKAI BEATS is India's first large-scale anime and K-pop music festival. A 12-hour, multi-zone live experience built entirely around Asian pop culture. Live performances, cosplay championships, K-pop dance battles, food, merch, and more. All under one sky." },
-      { question: "When and where is BANKAI BEATS happening?", answer: "Date and venue will be released soon. Follow our Instagram at @bankaibeats.in to be the first to know." },
+      { question: "When and where is BANKAI BEATS happening?", answer: "Date and venue will be released soon. Follow our Instagram at @bankaibeatsfest to be the first to know." },
       { question: "Who organises BANKAI BEATS?", answer: "BANKAI BEATS is organised by Dellusion Entertainment, a live experience company born inside the anime and K-pop fandom." },
-      { question: "Is this a one-time event or will it happen every year?", answer: "BANKAI BEATS is built to grow. The 2026 Delhi edition is the pilot. Future editions are planned across multiple cities in India with bigger lineups, more zones, and a larger community every year." },
-      { question: "What age group is this festival for?", answer: "BANKAI BEATS is open to all age groups. The festival is primarily designed for the 16 to 30 age group but welcomes anyone who loves the culture. Those below the age of 16 need to be accompanied by a guardian and both need to purchase a pass. Please note the Live Bar is strictly for guests of legal drinking age." },
+      { question: "Is this a one-time event or will it happen every year?", answer: "BANKAI BEATS is built to grow. The 2026 edition is the pilot. Future editions are planned across multiple cities in India with bigger lineups, more zones, and a larger community every year." },
+      { question: "What age group is this festival for?", answer: "BANKAI BEATS is open to all age groups. The festival is primarily designed for the 16 to 30 age group but welcomes anyone who loves the culture. Those below the age of 16 are need to be accompanied by a guardian and both need to purchase a pass. Please note the Live Bar is strictly for guests of legal drinking age." },
     ],
   },
   {
@@ -25,16 +25,16 @@ const faqs = [
       { question: "What sponsorship tiers are available?", answer: "We offer multiple tiers designed for different budgets and objectives. From title sponsorship to associate packages and brand activation zones, there is an option for every kind of brand. Get in touch with us at contact@dellusion.in for our full partnerships deck." },
       { question: "What kind of audience will my brand be reaching?", answer: "BANKAI BEATS attracts India's most passionate Gen Z audience. Anime fans, K-pop stans, cosplayers, gamers, and culture enthusiasts aged 16 to 30. An engaged, highly active community with strong purchasing intent and deep brand loyalty when approached authentically." },
       { question: "Can we set up a brand activation zone at the festival?", answer: "Yes. Dedicated brand activation zones are available for sponsors looking to create immersive on-ground experiences for attendees. Details are covered in our partnerships deck." },
-      { question: "How do we get in touch with the partnerships team?", answer: "Reach out to us directly at contact@dellusion.in or DM us on Instagram at @bankaibeats.in. We will get back to you within 48 hours." },
+      { question: "How do we get in touch with the partnerships team?", answer: "Reach out to us directly at contact@dellusion.in or DM us on Instagram at @bankaibeatsfest. We will get back to you within 48 hours." },
     ],
   },
   {
     category: "Attendees",
     items: [
-      { question: "How do I buy tickets?", answer: "Tickets will be available on our official website and authorised ticketing platforms. Follow our Instagram at @bankaibeats.in for announcements on when tickets go live." },
+      { question: "How do I buy tickets?", answer: "Tickets will be available on our official website and authorised ticketing platforms. Follow our Instagram at @bankaibeatsfest for announcements on when tickets go live." },
       { question: "What are the different ticket categories and prices?", answer: "Ticket categories and pricing will be announced closer to the event. Follow our official channels to be the first to know when tickets drop." },
       { question: "Can I come in cosplay?", answer: "Absolutely. Cosplay is not just welcome at BANKAI BEATS, it is celebrated. All genres and fandoms are welcome. Please ensure costumes do not include real weapons or items that may pose a safety risk." },
-      { question: "What is the refund and cancellation policy?", answer: "Tickets are non-refundable. In the unlikely event of a cancellation or postponement by the organiser, attendees will be notified directly with available options." },
+      { question: "What is the refund and cancellation policy?", answer: "Tickets are non-refundable. In the event of a full cancellation by the organiser, a refund will be issued. If the event is rescheduled due to unforeseen circumstances, the same tickets will remain valid for the new date." },
       { question: "Is the venue accessible for differently abled guests?", answer: "Yes. BANKAI BEATS is committed to being an inclusive festival. Accessibility ramps and dedicated viewing platforms for differently abled guests will be available across the venue." },
     ],
   },
@@ -42,7 +42,7 @@ const faqs = [
     category: "Experience",
     items: [
       { question: "What zones are available at the festival?", answer: "BANKAI BEATS features 8 immersive zones including the Live Music Stage, Cosplay Championship and K-pop Dance Battle, Entertainment Arena, Live Experience Zone, Food Court, Fan Meetup Zone, Merch Marketplace, and Live Bar." },
-      { question: "Who are the headliners performing at BANKAI BEATS?", answer: "Headliner announcements are coming soon. Follow our Instagram at @bankaibeats.in to be the first to know when the lineup drops." },
+      { question: "Who are the headliners performing at BANKAI BEATS?", answer: "Headliner announcements are coming soon. Follow our Instagram at @bankaibeatsfest to be the first to know when the lineup drops." },
       { question: "How do I register for the cosplay championship?", answer: "Cosplay championship registrations will open closer to the event. Details on categories, rules, and the registration process will be announced on our official website and social media channels." },
       { question: "How do I register for the K-pop dance battle?", answer: "K-pop dance battle registrations will open closer to the event. Details on format, rules, and how to register your crew will be announced on our official channels." },
       { question: "How do I get a Fan Meetup pass?", answer: "Fan Meetup passes are available at an additional cost on top of the general festival ticket. Details on availability, pricing, and which artists are included will be announced closer to the event. Spots are limited." },

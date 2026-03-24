@@ -74,7 +74,8 @@ const AboutSection = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-base text-muted-foreground leading-relaxed"
           >
-            It isn't a convention. It isn't a concert. It's something India has never had before! A full-scale music festival built entirely around anime & K-pop culture. Conventions give you stalls. Concerts give you one artist. BANKAI BEATS gives you both and then some. International headliners flying in from Korea and Japan. A cosplay championship that belongs on the main stage. 15,000+ fans under one sky. One day. One stage. One festival that changes everything.
+            The culture was always here. The festival never built. Until now!
+            BANKAI BEATS is India's first full-scale anime and K-pop festival. International headliners flying in from Korea and Japan. Cosplay Championship & Dance Battle on the main stage. 15,000+ fans. One day. One stage. One festival that changes everything.
           </motion.p>
         </div>
 
