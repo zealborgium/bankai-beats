@@ -35,12 +35,12 @@ const AboutSection = () => {
     <section id="about" className="py-16 md:py-20" ref={ref}>
       <div className="section-container">
         {/* Image marquee strip */}
-        <div className="overflow-hidden mb-12 -mx-6 sm:-mx-8 lg:-mx-12">
+        <div className="overflow-hidden mb-12 w-screen -ml-[calc((100vw-100%)/2)]">
           <div className="marquee-track">
-            {marqueeImages.map((img, i) => (
+            {[...marqueeImages, ...marqueeImages, ...marqueeImages, ...marqueeImages].map((img, i) => (
               <div
                 key={i}
-                className="w-48 h-32 rounded-2xl mx-3 overflow-hidden shrink-0"
+                className="w-64 h-32 rounded-2xl mx-3 overflow-hidden shrink-0"
                 style={{ border: '1px solid hsla(0, 0%, 100%, 0.1)', background: 'hsla(0, 0%, 100%, 0.04)', boxShadow: '0 4px 24px hsla(0, 0%, 100%, 0.05)' }}
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />

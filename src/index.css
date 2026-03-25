@@ -177,10 +177,6 @@
     width: max-content;
   }
 
-  .marquee-track:hover {
-    animation-play-state: paused;
-  }
-
   .color-bars {
     position: absolute;
     top: -40px;
