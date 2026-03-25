@@ -98,7 +98,7 @@ const Partners = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.2 + i * 0.06 }}
-                  className="card-inner overflow-hidden group text-center w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  className="card-inner overflow-hidden group text-center w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
                 >
                   <div className="w-full h-36 overflow-hidden mb-4 -mt-1 rounded-xl">
                     <img

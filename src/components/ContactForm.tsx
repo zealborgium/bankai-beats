@@ -28,6 +28,7 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [emailError, setEmailError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -129,11 +130,14 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className={inputClasses}
+                  onBlur={() => {
+                    const valid = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(formData.email);
+                    setEmailError(formData.email && !valid ? "Please enter a valid email address" : "");
+                  }}
+                  className={`${inputClasses} ${emailError ? "border-red-500" : ""}`}
                   placeholder="your@gmail.com"
-                  pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                  title="Please enter a valid email address (e.g. name@gmail.com)"
                 />
+                {emailError && <p className="text-red-500 text-xs mt-1 pl-4">{emailError}</p>}
               </div>
               <div>
                 <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">

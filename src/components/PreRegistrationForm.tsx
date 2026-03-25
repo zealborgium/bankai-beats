@@ -14,6 +14,8 @@ interface PreRegistrationFormProps {
 const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [ageError, setAgeError] = useState("");
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
@@ -83,7 +85,7 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.4 }}
-            className="card-warm w-full max-w-lg my-8 relative"
+            className="card-warm w-full max-w-lg mx-2 my-4 relative overflow-y-auto max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -110,9 +112,14 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
                     </div>
                     <div>
                       <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">Email *</label>
-                      <input type="email" name="Email" required value={formData.Email} onChange={handleChange} className={inputClasses} placeholder="your@email.com"
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                        title="Please enter a valid email address" />
+                      <input type="email" name="Email" required value={formData.Email} onChange={handleChange}
+                        onBlur={() => {
+                          const valid = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/.test(formData.Email);
+                          setEmailError(formData.Email && !valid ? "Please enter a valid email address" : "");
+                        }}
+                        className={`${inputClasses} ${emailError ? "border-red-500" : ""}`}
+                        placeholder="your@email.com" />
+                      {emailError && <p className="text-red-500 text-xs mt-1 pl-4">{emailError}</p>}
                     </div>
                     <div>
                       <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">Contact / WhatsApp *</label>
@@ -120,7 +127,13 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
                     </div>
                     <div>
                       <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">Age *</label>
-                      <input type="text" name="Age" required value={formData.Age} onChange={handleChange} className={inputClasses} placeholder="e.g. 21" />
+                      <input type="text" name="Age" required value={formData.Age} onChange={handleChange}
+                        onBlur={() => {
+                          const age = parseInt(formData.Age);
+                          setAgeError(formData.Age && (isNaN(age) || age < 1 || age > 99) ? "Age must be between 1 and 99" : "");
+                        }}
+                        className={`${inputClasses} ${ageError ? "border-red-500" : ""}`} placeholder="e.g. 21" />
+                      {ageError && <p className="text-red-500 text-xs mt-1 pl-4">{ageError}</p>}
                     </div>
                     <div>
                       <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">Gender *</label>

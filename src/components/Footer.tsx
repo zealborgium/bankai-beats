@@ -34,7 +34,7 @@ const Footer = () => {
             <img src={dellusionLogo} alt="Dellusion Entertainment" className="h-16 w-auto opacity-80 hover:opacity-100 transition-opacity" />
           </a>
         </div>
-        <div className="flex flex-col items-center md:items-end gap-2">
+        <div className="hidden md:flex flex-col items-end gap-2">
           <p className="text-sm font-mono uppercase tracking-wider text-neon-purple glow-text-purple mb-1">Navigation</p>
           {navLinks.map((item) => (
             <Link key={item.label} to={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider">

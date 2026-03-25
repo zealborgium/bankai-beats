@@ -53,11 +53,11 @@ const faqs = [
 const FAQItem = ({ faq, isOpen, toggle }: { faq: { question: string; answer: string }; isOpen: boolean; toggle: () => void }) => (
   <div style={{ borderBottom: '2px solid hsl(var(--border))' }}>
     <button onClick={toggle} className="w-full flex items-center justify-between py-6 text-left group">
-      <h3 className="font-display font-bold text-base pr-4 text-foreground transition-colors">{faq.question}</h3>
+      <h3 className="font-display font-bold text-sm md:text-base pr-4 text-foreground transition-colors">{faq.question}</h3>
       <ChevronDown className={`w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
     </button>
     <motion.div initial={false} animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-      <p className="text-muted-foreground pb-6 leading-relaxed">{faq.answer}</p>
+      <p className="text-sm md:text-base text-muted-foreground pb-6 leading-relaxed">{faq.answer}</p>
     </motion.div>
   </div>
 );

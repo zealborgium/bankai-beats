@@ -89,7 +89,7 @@ const HeroSection = () => {
       <PreRegistrationForm open={preRegOpen} onClose={() => setPreRegOpen(false)} />
 
       {/* Sponsor marquee — below the viewport fold */}
-      <div className="w-full overflow-hidden py-4" style={{ borderTop: '1px solid hsla(0, 0%, 100%, 0.1)', borderBottom: '1px solid hsla(0, 0%, 100%, 0.1)', background: 'hsla(0, 0%, 100%, 0.04)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+      <div className="overflow-hidden py-4 relative -mx-4 w-[calc(100%+2rem)]" style={{ borderTop: '1px solid hsla(0, 0%, 100%, 0.1)', borderBottom: '1px solid hsla(0, 0%, 100%, 0.1)', background: 'hsla(0, 0%, 100%, 0.04)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
         <div className="marquee-track">
           {Array(4).fill("Anime ⚔️ K-pop 💜 Live Concert 🎸 Cosplay 🎭 Dance Battle 💃 Community 😍 Experiences ✨ Food & Merch Stalls 🍜").map((text, i) =>
           <span
