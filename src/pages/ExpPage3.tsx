@@ -5,24 +5,26 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
+const img = "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop";
+
 const row1 = [
-  { title: "Activity 1", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
-  { title: "Activity 2", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
-  { title: "Activity 3", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
-  { title: "Activity 4", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
+  { title: "Photobooth", desc: "", img },
+  { title: "Bouncy Castle", desc: "", img },
+  { title: "Mechanical Bull", desc: "", img },
+  { title: "Gatcha Machines", desc: "", img },
 ];
 
 const row2 = [
-  { title: "Activity 5", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
-  { title: "Activity 6", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
-  { title: "Activity 7", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
+  { title: "Beyblade Battles", desc: "", img },
+  { title: "Ddakji Battles", desc: "", img },
+  { title: "Flow Artists", desc: "", img },
 ];
 
 const row3 = [
-  { title: "Activity 8", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
-  { title: "Activity 9", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
-  { title: "Activity 10", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
-  { title: "Activity 11", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop" },
+  { title: "Anime Quiz", desc: "", img },
+  { title: "K-Pop Quiz", desc: "", img },
+  { title: "Random Play Dance", desc: "", img },
+  { title: "& More", desc: "", img },
 ];
 
 const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img: string }; i: number; isInView: boolean }) => (
@@ -48,7 +50,7 @@ const ExpPage3 = () => {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       <Navbar />
-      <PageHero title="Entertainment" highlight="Arena" subtitle="Gaming, karaoke, mechanical bull, bouncy castle and more — fun in every corner." />
+      <PageHero title="Entertainment" highlight="Arena" subtitle="Gaming, karaoke, mechanical bull, bouncy castle and more — fun in every corner." centered />
 
       <section className="py-10 md:py-14" ref={ref}>
         <div className="section-container">
@@ -57,6 +59,7 @@ const ExpPage3 = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             className="card-warm"
           >
+            <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
             <div className="flex flex-wrap justify-center gap-4 mb-4">
               {row1.map((item, i) => <Card key={item.title} item={item} i={i} isInView={isInView} />)}
             </div>

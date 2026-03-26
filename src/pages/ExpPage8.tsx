@@ -8,10 +8,10 @@ import ContactCTA from "@/components/ContactCTA";
 const img = "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=450&fit=crop";
 
 const items = [
-  { title: "Drink 1", desc: "Coming soon.", img },
-  { title: "Drink 2", desc: "Coming soon.", img },
-  { title: "Drink 3", desc: "Coming soon.", img },
-  { title: "Drink 4", desc: "Coming soon.", img },
+  { title: "Sake", desc: "", img },
+  { title: "Rice Beer", desc: "", img },
+  { title: "Cocktails", desc: "", img },
+  { title: "& More", desc: "", img },
 ];
 
 const ExpPage8 = () => {
@@ -21,11 +21,12 @@ const ExpPage8 = () => {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       <Navbar />
-      <PageHero title="Live" highlight="Bar" subtitle="Sake, rice beer and a full selection of liquor. Served responsibly to guests of legal drinking age." />
+      <PageHero title="Live" highlight="Bar" subtitle="Sake, rice beer and a full selection of liquor. Served responsibly to guests of legal drinking age." centered />
 
       <section className="py-10 md:py-14" ref={ref}>
         <div className="section-container">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} className="card-warm">
+            <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
             <div className="flex flex-wrap justify-center gap-4">
               {items.map((item, i) => (
                 <motion.div

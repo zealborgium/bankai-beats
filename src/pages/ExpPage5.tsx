@@ -7,14 +7,24 @@ import ContactCTA from "@/components/ContactCTA";
 
 const img = "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=450&fit=crop";
 
-const makeRow = (start: number) => Array.from({ length: 4 }, (_, i) => ({
-  title: `Stall ${start + i}`, desc: "Coming soon.", img,
-}));
-
-const row1 = makeRow(1);
-const row2 = makeRow(5);
-const row3 = makeRow(9);
-
+const row1 = [
+  { title: "Ramen", desc: "", img },
+  { title: "Dumplings", desc: "", img },
+  { title: "Tempura", desc: "", img },
+  { title: "Mochi", desc: "", img },
+];
+const row2 = [
+  { title: "Pancakes", desc: "", img },
+  { title: "Korean BBQ", desc: "", img },
+  { title: "Korean Fried Chicken", desc: "", img },
+  { title: "Corn Dog", desc: "", img },
+];
+const row3 = [
+  { title: "Bibimbap", desc: "", img },
+  { title: "Cotton Candy & Sweets", desc: "", img },
+  { title: "Burgers & Pizza", desc: "", img },
+  { title: "& More", desc: "", img },
+];
 const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img: string }; i: number; isInView: boolean }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -37,11 +47,12 @@ const ExpPage5 = () => {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       <Navbar />
-      <PageHero title="Food" highlight="Court" subtitle="25+ curated stalls with authentic Japanese and Korean cuisine." />
+      <PageHero title="Food" highlight="Court" subtitle="25+ curated stalls with authentic Japanese and Korean cuisine." centered />
 
       <section className="py-10 md:py-14" ref={ref}>
         <div className="section-container">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} className="card-warm">
+            <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
             <div className="flex flex-wrap justify-center gap-4 mb-4">
               {row1.map((item, i) => <Card key={item.title} item={item} i={i} isInView={isInView} />)}
             </div>

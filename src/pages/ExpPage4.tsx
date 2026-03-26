@@ -8,18 +8,18 @@ import ContactCTA from "@/components/ContactCTA";
 const img = "https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&h=450&fit=crop";
 
 const row1 = [
-  { title: "Experience 1", desc: "Coming soon.", img },
-  { title: "Experience 2", desc: "Coming soon.", img },
-  { title: "Experience 3", desc: "Coming soon.", img },
+  { title: "Karaoke Rooms", desc: "", img },
+  { title: "Kimono & Yukata Trial", desc: "", img },
+  { title: "Hanbok Trial", desc: "", img },
 ];
 const row2 = [
-  { title: "Experience 4", desc: "Coming soon.", img },
-  { title: "Experience 5", desc: "Coming soon.", img },
+  { title: "Sumo Costume Trial", desc: "", img },
+  { title: "Face Painting", desc: "", img },
 ];
 const row3 = [
-  { title: "Experience 6", desc: "Coming soon.", img },
-  { title: "Experience 7", desc: "Coming soon.", img },
-  { title: "Experience 8", desc: "Coming soon.", img },
+  { title: "Temporary & Permanent Tattoos", desc: "", img },
+  { title: "Piercings & Color Dreadlocks", desc: "", img },
+  { title: "& More", desc: "", img },
 ];
 
 const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img: string }; i: number; isInView: boolean }) => (
@@ -44,11 +44,12 @@ const ExpPage4 = () => {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       <Navbar />
-      <PageHero title="Live" highlight="Experience" subtitle="Kimono, yukata, hanbok trials, face painting, tattoos and flow artists." />
+      <PageHero title="Live" highlight="Experience" subtitle="Kimono, yukata, hanbok trials, face painting, tattoos and flow artists." centered />
 
       <section className="py-10 md:py-14" ref={ref}>
         <div className="section-container">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} className="card-warm">
+            <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
             <div className="flex flex-wrap justify-center gap-4 mb-4">
               {row1.map((item, i) => <Card key={item.title} item={item} i={i} isInView={isInView} />)}
             </div>

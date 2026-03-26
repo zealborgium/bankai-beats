@@ -7,13 +7,10 @@ import ContactCTA from "@/components/ContactCTA";
 
 const img = "https://images.unsplash.com/photo-1526478806334-5fd488fcaabc?w=600&h=450&fit=crop";
 
-const makeRow = (start: number) => Array.from({ length: 4 }, (_, i) => ({
-  title: `Vendor ${start + i}`, desc: "Coming soon.", img,
-}));
+const makeRow = (items: string[]) => items.map(title => ({ title, desc: "", img }));
 
-const row1 = makeRow(1);
-const row2 = makeRow(5);
-const row3 = makeRow(9);
+const row1 = makeRow(["Posters, Plushies & Figurines", "Jewellery", "Albums", "Handmade Items"]);
+const row2 = makeRow(["Collectibles", "Crystals & Scented Candles", "Thrift Shops", "& More"]);
 
 const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img: string }; i: number; isInView: boolean }) => (
   <motion.div
@@ -37,19 +34,17 @@ const ExpPage7 = () => {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       <Navbar />
-      <PageHero title="Merch" highlight="Marketplace" subtitle="40+ vendors with exclusive anime and K-pop merchandise, collectibles and more." />
+      <PageHero title="Merch" highlight="Marketplace" subtitle="40+ vendors with exclusive anime and K-pop merchandise, collectibles and more." centered />
 
       <section className="py-10 md:py-14" ref={ref}>
         <div className="section-container">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} className="card-warm">
+            <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
             <div className="flex flex-wrap justify-center gap-4 mb-4">
               {row1.map((item, i) => <Card key={item.title} item={item} i={i} isInView={isInView} />)}
             </div>
-            <div className="flex flex-wrap justify-center gap-4 mb-4">
-              {row2.map((item, i) => <Card key={item.title} item={item} i={i + 4} isInView={isInView} />)}
-            </div>
             <div className="flex flex-wrap justify-center gap-4">
-              {row3.map((item, i) => <Card key={item.title} item={item} i={i + 8} isInView={isInView} />)}
+              {row2.map((item, i) => <Card key={item.title} item={item} i={i + 4} isInView={isInView} />)}
             </div>
           </motion.div>
         </div>

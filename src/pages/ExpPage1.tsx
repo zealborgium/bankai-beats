@@ -6,11 +6,11 @@ import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
 const artists = [
-  { title: "Artist 1", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
-  { title: "Artist 2", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
-  { title: "Artist 3", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
-  { title: "Artist 4", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
-  { title: "Artist 5", desc: "Coming soon.", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
+  { title: "K-Pop Headliner", desc: "Artist / Band (To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
+  { title: "J-Pop Headliner", desc: "Artist / Band (To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
+  { title: "Anime & K-Pop DJ", desc: "(To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
+  { title: "J-Metal Band", desc: "(To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
+  { title: "& More Artists", desc: "(To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
 ];
 
 const ExpPage1 = () => {
@@ -29,6 +29,7 @@ const ExpPage1 = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             className="card-warm"
           >
+            <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
             <div className="flex flex-wrap justify-center gap-4">
               {artists.map((item, i) => (
                 <motion.div
