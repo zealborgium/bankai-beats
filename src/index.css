@@ -65,7 +65,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-image: url('/images/cyberpunk-bg.jpg');
+    background-image: url('/src/assets/Firefly_Gemini Flash_Photorealistic wide angle shot of a massive outdoor music festival at night, enormous 103653.png');
     background-size: cover;
     background-position: center bottom;
     background-attachment: fixed;
@@ -76,7 +76,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    background: hsl(var(--background) / 0.55);
+    background: hsl(var(--background) / 0.65);
     z-index: 0;
     pointer-events: none;
   }
