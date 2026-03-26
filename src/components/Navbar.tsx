@@ -15,7 +15,7 @@ const navItems = [
 ];
 
 const expDropdown = [
-  { label: "Live Music", href: "/experience/live-music" },
+  { label: "Live Stage", href: "/experience/live-music" },
   { label: "Competitions", href: "/experience/cosplay-kpop-battle" },
   { label: "Entertainment Arena", href: "/experience/entertainment-arena" },
   { label: "Live Experience", href: "/experience/live-experience" },
