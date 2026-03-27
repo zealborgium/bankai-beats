@@ -78,7 +78,6 @@
       background-position: center top;
     }
   }
-  }
 
   body::before {
     content: '';
