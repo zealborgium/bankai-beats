@@ -5,13 +5,16 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-const img = "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=450&fit=crop";
+import sakeImg from "@/assets/Live Bar/SAKE.jpg.jpeg";
+import riceBeerImg from "@/assets/Live Bar/RICE BEER.jpg.jpeg";
+import cocktailsImg from "@/assets/Live Bar/COCKTAILS.jpg.jpeg";
+import moreBarImg from "@/assets/Live Bar/AND MORE BAR.jpg.jpeg";
 
 const items = [
-  { title: "Sake", desc: "", img },
-  { title: "Rice Beer", desc: "", img },
-  { title: "Cocktails", desc: "", img },
-  { title: "& More", desc: "", img },
+  { title: "Sake", desc: "", img: sakeImg },
+  { title: "Rice Beer", desc: "", img: riceBeerImg },
+  { title: "Cocktails", desc: "", img: cocktailsImg },
+  { title: "& More", desc: "", img: moreBarImg },
 ];
 
 const ExpPage8 = () => {

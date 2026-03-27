@@ -5,12 +5,29 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-const img = "https://images.unsplash.com/photo-1526478806334-5fd488fcaabc?w=600&h=450&fit=crop";
+import postersImg from "@/assets/Merch Marketplace/POSTERS & PLUSHIES.jpg.jpeg";
+import jewelleryImg from "@/assets/Merch Marketplace/JEWELLRY.jpg.jpeg";
+import albumsImg from "@/assets/Merch Marketplace/ALBUMS.jpg.jpeg";
+import handmadeImg from "@/assets/Merch Marketplace/HANDMADE ITEMS.jpg.jpeg";
+import collectiblesImg from "@/assets/Merch Marketplace/COLLECTIBLES.jpg.jpeg";
+import crystalsImg from "@/assets/Merch Marketplace/CRYSTALS AND CANDLES.jpg.jpeg";
+import thriftImg from "@/assets/Merch Marketplace/THIFT STALLS.jpg.jpeg";
+import moreMerchImg from "@/assets/Merch Marketplace/AND MORE STALLS.jpg.jpeg";
 
-const makeRow = (items: string[]) => items.map(title => ({ title, desc: "", img }));
+const makeRow = (items: string[]) => items.map(title => ({ title, desc: "", img: "" }));
 
-const row1 = makeRow(["Posters, Plushies & Figurines", "Jewellery", "Albums", "Handmade Items"]);
-const row2 = makeRow(["Collectibles", "Crystals & Scented Candles", "Thrift Shops", "& More"]);
+const row1 = [
+  { title: "Posters, Plushies & Figurines", desc: "", img: postersImg },
+  { title: "Jewellery", desc: "", img: jewelleryImg },
+  { title: "Albums", desc: "", img: albumsImg },
+  { title: "Handmade Items", desc: "", img: handmadeImg },
+];
+const row2 = [
+  { title: "Collectibles", desc: "", img: collectiblesImg },
+  { title: "Crystals & Scented Candles", desc: "", img: crystalsImg },
+  { title: "Thrift Shops", desc: "", img: thriftImg },
+  { title: "& More", desc: "", img: moreMerchImg },
+];
 
 const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img: string }; i: number; isInView: boolean }) => (
   <motion.div

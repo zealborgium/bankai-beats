@@ -28,6 +28,10 @@ const ExpPage2 = () => (
           <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mt-4">
             If you live and breathe the characters you bring to life, this is your moment. From the detail of your craft to the power of your performance, every element will be celebrated. Categories will span across anime, K-pop, gaming, and beyond. Judging will recognise craftsmanship, accuracy, creativity, and stage presence. Full competition details, prize structure, and registration will be announced soon.
           </p>
+          <div className="flex flex-wrap gap-4 mt-8 justify-center">
+            <button disabled className="btn-primary opacity-70 cursor-not-allowed">Learn More (Coming Soon)</button>
+            <button disabled className="btn-outline opacity-70 cursor-not-allowed">Register Now (Coming Soon)</button>
+          </div>
         </motion.div>
       </div>
     </section>
@@ -51,6 +55,10 @@ const ExpPage2 = () => (
           <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mt-4">
             This is not just another dance competition. It is the largest K-pop dance battle stage India has ever seen, built specifically for the community that has kept this culture alive and growing across every city in the country. Synchronisation, formation, energy, and stage presence will all be part of the experience. Whether your crew has been together for six months or six years, if K-pop runs through everything you do, this stage is yours. Competition format, group size requirements, song selection rules, prize details, and registration will all be announced soon. Start preparing.
           </p>
+          <div className="flex flex-wrap gap-4 mt-8 justify-center">
+            <button disabled className="btn-primary opacity-70 cursor-not-allowed">Learn More (Coming Soon)</button>
+            <button disabled className="btn-outline opacity-70 cursor-not-allowed">Register Now (Coming Soon)</button>
+          </div>
         </motion.div>
       </div>
     </section>

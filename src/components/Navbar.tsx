@@ -48,6 +48,7 @@ const Navbar = () => {
   }, []);
 
   const [expOpen, setExpOpen] = useState(false);
+  const [mobileExpOpen, setMobileExpOpen] = useState(false);
   const expRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -77,9 +78,6 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3`}
       style={{ 
         background: isScrolled ? 'hsla(0, 0%, 100%, 0.08)' : 'hsla(0, 0%, 100%, 0.04)',
@@ -99,12 +97,15 @@ const Navbar = () => {
               <div key="experience" className="relative" ref={expRef}>
                 <button
                   onClick={() => setExpOpen(v => !v)}
-                  className={`text-sm font-mono uppercase tracking-wider transition-all duration-300 px-3 py-2 rounded-full flex items-center gap-1 ${
-                    location.pathname.startsWith("/experience")
-                      ? "bg-white/10 text-white border border-white/20 shadow-[0_0_12px_hsla(0,0%,100%,0.15)]"
+                  className={`relative text-sm font-mono uppercase tracking-wider transition-colors duration-300 px-3 py-2 rounded-full flex items-center gap-1 ${
+                    location.pathname.startsWith("/experience") || expOpen
+                      ? "text-white"
                       : "text-white/70 hover:text-white hover:[text-shadow:0_0_8px_rgba(255,255,255,0.5),0_0_20px_rgba(255,255,255,0.2)]"
                   }`}
                 >
+                  {(location.pathname.startsWith("/experience") || expOpen) && (
+                    <motion.span layoutId="nav-pill" className="absolute inset-0 rounded-full bg-white/10 border border-white/20 shadow-[0_0_12px_hsla(0,0%,100%,0.15)]" style={{ zIndex: -1 }} />
+                  )}
                   Experience
                   <svg className={`w-3 h-3 transition-transform ${expOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
@@ -136,12 +137,13 @@ const Navbar = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className={`text-sm font-mono uppercase tracking-wider transition-all duration-300 px-3 py-2 rounded-full ${
-                  isActive(item.href)
-                    ? "bg-white/10 text-white border border-white/20 shadow-[0_0_12px_hsla(0,0%,100%,0.15)]"
-                    : "text-white/70 hover:text-white hover:[text-shadow:0_0_8px_rgba(255,255,255,0.5),0_0_20px_rgba(255,255,255,0.2)]"
+                className={`relative text-sm font-mono uppercase tracking-wider transition-colors duration-300 px-3 py-2 rounded-full ${
+                  isActive(item.href) ? "text-white" : "text-white/70 hover:text-white hover:[text-shadow:0_0_8px_rgba(255,255,255,0.5),0_0_20px_rgba(255,255,255,0.2)]"
                 }`}
               >
+                {isActive(item.href) && (
+                  <motion.span layoutId="nav-pill" className="absolute inset-0 rounded-full bg-white/10 border border-white/20 shadow-[0_0_12px_hsla(0,0%,100%,0.15)]" style={{ zIndex: -1 }} />
+                )}
                 {item.label}
               </Link>
             ) : (
@@ -185,17 +187,27 @@ const Navbar = () => {
               {navItems.map((item) =>
                 item.label === "Experience" ? (
                   <div key="experience">
-                    <p className="text-sm text-muted-foreground font-mono uppercase tracking-wider mb-2">Experience</p>
-                    {expDropdown.map((d) => (
-                      <Link
-                        key={d.label}
-                        to={d.href}
-                        onClick={() => setIsMobileOpen(false)}
-                        className="block pl-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors font-mono uppercase tracking-wider"
-                      >
-                        {d.label}
-                      </Link>
-                    ))}
+                    <button
+                      onClick={() => setMobileExpOpen(v => !v)}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono uppercase tracking-wider flex items-center gap-1 w-full"
+                    >
+                      Experience
+                      <svg className={`w-3 h-3 transition-transform ${mobileExpOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    {mobileExpOpen && (
+                      <div className="mt-2 pl-3 flex flex-col gap-1">
+                        {expDropdown.map((d) => (
+                          <Link
+                            key={d.label}
+                            to={d.href}
+                            onClick={() => setIsMobileOpen(false)}
+                            className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider py-1"
+                          >
+                            {d.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ) : item.href.startsWith("/") && !item.href.startsWith("/#") ? (
                   <Link

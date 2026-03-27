@@ -5,21 +5,28 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-const img = "https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&h=450&fit=crop";
+import karaokeImg from "@/assets/Experience Arena/KARAOKE ROOM.jpg.jpeg";
+import kimonoImg from "@/assets/Experience Arena/kIMONO TRIAL.jpg.jpeg";
+import hanbokImg from "@/assets/Experience Arena/HANBOK TRIAL.jpg.jpeg";
+import sumoImg from "@/assets/Experience Arena/SUMO COSTUME TRIAL.jpg.jpeg";
+import facePaintImg from "@/assets/Experience Arena/FACE PAINTING.jpg.jpeg";
+import tattooImg from "@/assets/Experience Arena/PERMANENT TATTOS.webp";
+import dreadlocksImg from "@/assets/Experience Arena/COLOURFUL  DREADLOCKS.jpg.jpeg";
+import moreExpImg from "@/assets/Experience Arena/AND MORE EXPERIENCES.jpg.jpeg";
 
 const row1 = [
-  { title: "Karaoke Rooms", desc: "", img },
-  { title: "Kimono & Yukata Trial", desc: "", img },
-  { title: "Hanbok Trial", desc: "", img },
+  { title: "Karaoke Rooms", desc: "", img: karaokeImg },
+  { title: "Kimono & Yukata Trial", desc: "", img: kimonoImg },
+  { title: "Hanbok Trial", desc: "", img: hanbokImg },
 ];
 const row2 = [
-  { title: "Sumo Costume Trial", desc: "", img },
-  { title: "Face Painting", desc: "", img },
+  { title: "Sumo Costume Trial", desc: "", img: sumoImg },
+  { title: "Face Painting", desc: "", img: facePaintImg },
 ];
 const row3 = [
-  { title: "Temporary & Permanent Tattoos", desc: "", img },
-  { title: "Piercings & Color Dreadlocks", desc: "", img },
-  { title: "& More", desc: "", img },
+  { title: "Temporary & Permanent Tattoos", desc: "", img: tattooImg },
+  { title: "Piercings & Color Dreadlocks", desc: "", img: dreadlocksImg },
+  { title: "& More", desc: "", img: moreExpImg },
 ];
 
 const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img: string }; i: number; isInView: boolean }) => (

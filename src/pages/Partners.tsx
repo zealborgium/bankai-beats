@@ -16,7 +16,7 @@ const stats = [
 const opportunities = [
   { title: "Investors", desc: "First-mover advantage in the Asian pop culture festival space. Early-stage opportunity with massive growth potential.", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=450&fit=crop" },
   { title: "Brand Sponsors", desc: "Connect with 15,000+ engaged Gen-Z consumers through branded activations, product sampling, and immersive experiences.", img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=450&fit=crop" },
-  { title: "Exhibitors & Vendors", desc: "Showcase products to anime, K-pop, and gaming fans. 40+ stall spaces available for merch, art, and collectibles.", img: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=450&fit=crop" },
+  { title: "Exhibitors & Vendors", desc: "Showcase products to anime, K-pop, and pop culture fans. 40+ stall spaces available for merch, art, and collectibles.", img: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=450&fit=crop" },
   { title: "Media Partners", desc: "Cover India's biggest Asian pop culture movement. Exclusive press access, interviews, and behind-the-scenes content.", img: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&h=450&fit=crop" },
   { title: "F&B Partners", desc: "Serve authentic Asian cuisine to 15,000+ hungry festival-goers. 25+ curated food stall spaces available.", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=450&fit=crop" },
 ];

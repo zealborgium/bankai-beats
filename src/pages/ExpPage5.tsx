@@ -5,25 +5,36 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-const img = "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=450&fit=crop";
+import ramenImg from "@/assets/Food/RAMEN.jpg.jpeg";
+import dumplingsImg from "@/assets/Food/DUMPLINGS.jpg.jpeg";
+import tempuraImg from "@/assets/Food/TEMPURA.jpg.jpeg";
+import mochiImg from "@/assets/Food/MOCHI.jpg.jpeg";
+import pancakesImg from "@/assets/Food/PANCAKES.jpg.jpeg";
+import kbbqImg from "@/assets/Food/KOREAN BBQ.jpg.jpeg";
+import kfcImg from "@/assets/Food/KOREAN FRIEND CHIKEN.webp";
+import corndogImg from "@/assets/Food/CORN DOG.jpg.jpeg";
+import bibimbapImg from "@/assets/Food/BIBIMBAP.jpg.jpeg";
+import cottonCandyImg from "@/assets/Food/COTTON CANDY.jpg.jpeg";
+import burgerImg from "@/assets/Food/BURGERS AND PIZZA.jpg.jpeg";
+import moreFoodImg from "@/assets/Food/& MORE FOOD.jpg.jpeg";
 
 const row1 = [
-  { title: "Ramen", desc: "", img },
-  { title: "Dumplings", desc: "", img },
-  { title: "Tempura", desc: "", img },
-  { title: "Mochi", desc: "", img },
+  { title: "Ramen", desc: "", img: ramenImg },
+  { title: "Dumplings", desc: "", img: dumplingsImg },
+  { title: "Tempura", desc: "", img: tempuraImg },
+  { title: "Mochi", desc: "", img: mochiImg },
 ];
 const row2 = [
-  { title: "Pancakes", desc: "", img },
-  { title: "Korean BBQ", desc: "", img },
-  { title: "Korean Fried Chicken", desc: "", img },
-  { title: "Corn Dog", desc: "", img },
+  { title: "Pancakes", desc: "", img: pancakesImg },
+  { title: "Korean BBQ", desc: "", img: kbbqImg },
+  { title: "Korean Fried Chicken", desc: "", img: kfcImg },
+  { title: "Corn Dog", desc: "", img: corndogImg },
 ];
 const row3 = [
-  { title: "Bibimbap", desc: "", img },
-  { title: "Cotton Candy & Sweets", desc: "", img },
-  { title: "Burgers & Pizza", desc: "", img },
-  { title: "& More", desc: "", img },
+  { title: "Bibimbap", desc: "", img: bibimbapImg },
+  { title: "Cotton Candy & Sweets", desc: "", img: cottonCandyImg },
+  { title: "Burgers & Pizza", desc: "", img: burgerImg },
+  { title: "& More", desc: "", img: moreFoodImg },
 ];
 const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img: string }; i: number; isInView: boolean }) => (
   <motion.div

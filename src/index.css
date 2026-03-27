@@ -67,9 +67,17 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-image: url('/src/assets/Firefly_Gemini Flash_Photorealistic wide angle shot of a massive outdoor music festival at night, enormous 103653.png');
     background-size: cover;
-    background-position: center bottom;
+    background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      background-attachment: scroll;
+      background-position: center top;
+    }
+  }
   }
 
   body::before {
@@ -272,6 +280,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Selection color */

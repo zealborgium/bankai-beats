@@ -1,17 +1,30 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Twitter, Mail } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 import { toast } from "sonner";
+import { useState } from "react";
 import dellusionLogo from "@/assets/dellusion-full-logo.png";
 
-const navLinks = [
+const topLinks = [
   { label: "About", href: "/about" },
-  { label: "Experience", href: "/experience" },
   { label: "Partners", href: "/partners" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
+  { label: "Join The Team", href: "/join-the-team" },
+];
+
+const expLinks = [
+  { label: "Live Stage", href: "/experience/live-music" },
+  { label: "Competitions", href: "/experience/cosplay-kpop-battle" },
+  { label: "Entertainment Arena", href: "/experience/entertainment-arena" },
+  { label: "Live Experience", href: "/experience/live-experience" },
+  { label: "Food Court", href: "/experience/food-court" },
+  { label: "Fan Meetup", href: "/experience/fan-meetup" },
+  { label: "Merch Marketplace", href: "/experience/merch-marketplace" },
+  { label: "Live Bar", href: "/experience/live-bar" },
 ];
 
 const Footer = () => {
+  const [expOpen, setExpOpen] = useState(false);
   const copyEmail = () => {
     navigator.clipboard.writeText("contact@dellusion.in");
     toast.success("Email copied to clipboard!");
@@ -36,7 +49,24 @@ const Footer = () => {
         </div>
         <div className="hidden md:flex flex-col items-end gap-2">
           <p className="text-sm font-mono uppercase tracking-wider text-neon-purple glow-text-purple mb-1">Navigation</p>
-          {navLinks.map((item) => (
+          <Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider">About</Link>
+          <button
+            onClick={() => setExpOpen(v => !v)}
+            className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider flex items-center gap-1"
+          >
+            Experience
+            <svg className={`w-3 h-3 transition-transform ${expOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          {expOpen && (
+            <div className="flex flex-col items-end gap-1 pr-1">
+              {expLinks.map((item) => (
+                <Link key={item.label} to={item.href} className="text-xs text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          )}
+          {topLinks.filter(l => l.label !== "About").map((item) => (
             <Link key={item.label} to={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-wider">
               {item.label}
             </Link>

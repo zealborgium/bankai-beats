@@ -5,26 +5,36 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-const img = "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=450&fit=crop";
+import photoboothImg from "@/assets/Entertainment Area/PHOTOBOOTH.webp";
+import bouncyImg from "@/assets/Entertainment Area/BOUNCY CASTLE.jpg.jpeg";
+import bullImg from "@/assets/Entertainment Area/MECHANICAL BULL.jpg.jpeg";
+import gatchaImg from "@/assets/Entertainment Area/GATCHA MACHINE.jpg.jpeg";
+import beybladeImg from "@/assets/Entertainment Area/BEYBALDE BATTLE.jpg.jpeg";
+import ddakjiImg from "@/assets/Entertainment Area/DDAKJI BATTLE.jpg.jpeg";
+import flowImg from "@/assets/Entertainment Area/FLOW ARTISTS.webp";
+import animeQuizImg from "@/assets/Entertainment Area/ANIME QUIZ.jpg.jpeg";
+import kpopQuizImg from "@/assets/Entertainment Area/KPOP QUIZ.jpg.jpeg";
+import rpdImg from "@/assets/Entertainment Area/RANDOM PLAY DANCE.jpg.jpeg";
+import moreImg from "@/assets/Entertainment Area/AND MORE ENTERTAINMENTjpg.jpg.jpeg";
 
 const row1 = [
-  { title: "Photobooth", desc: "", img },
-  { title: "Bouncy Castle", desc: "", img },
-  { title: "Mechanical Bull", desc: "", img },
-  { title: "Gatcha Machines", desc: "", img },
+  { title: "Photobooth", desc: "", img: photoboothImg },
+  { title: "Bouncy Castle", desc: "", img: bouncyImg },
+  { title: "Mechanical Bull", desc: "", img: bullImg },
+  { title: "Gatcha Machines", desc: "", img: gatchaImg },
 ];
 
 const row2 = [
-  { title: "Beyblade Battles", desc: "", img },
-  { title: "Ddakji Battles", desc: "", img },
-  { title: "Flow Artists", desc: "", img },
+  { title: "Beyblade Battles", desc: "", img: beybladeImg },
+  { title: "Ddakji Battles", desc: "", img: ddakjiImg },
+  { title: "Flow Artists", desc: "", img: flowImg },
 ];
 
 const row3 = [
-  { title: "Anime Quiz", desc: "", img },
-  { title: "K-Pop Quiz", desc: "", img },
-  { title: "Random Play Dance", desc: "", img },
-  { title: "& More", desc: "", img },
+  { title: "Anime Quiz", desc: "", img: animeQuizImg },
+  { title: "K-Pop Quiz", desc: "", img: kpopQuizImg },
+  { title: "Random Play Dance", desc: "", img: rpdImg },
+  { title: "& More", desc: "", img: moreImg },
 ];
 
 const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img: string }; i: number; isInView: boolean }) => (

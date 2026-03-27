@@ -5,12 +5,18 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
+import kpopArtistImg from "@/assets/Live Stage/KPOP ARTIST.jfif.jpeg";
+import jpopArtistImg from "@/assets/Live Stage/JPOP ARTIST.jpg.jpeg";
+import djImg from "@/assets/Live Stage/ANIME AND KPOP DJ.jpg.jpeg";
+import jmetalImg from "@/assets/Live Stage/J METAL ARTIST.jpg.jpeg";
+import moreArtistsImg from "@/assets/Live Stage/MORE ARTISTS.jpg.jpeg";
+
 const artists = [
-  { title: "K-Pop Headliner", desc: "Artist / Band (To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
-  { title: "J-Pop Headliner", desc: "Artist / Band (To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
-  { title: "Anime & K-Pop DJ", desc: "(To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
-  { title: "J-Metal Band", desc: "(To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
-  { title: "& More Artists", desc: "(To Be Announced)", img: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=450&fit=crop" },
+  { title: "K-Pop Headliner", desc: "Artist / Band (To Be Announced)", img: kpopArtistImg },
+  { title: "J-Pop Headliner", desc: "Artist / Band (To Be Announced)", img: jpopArtistImg },
+  { title: "Anime & K-Pop DJ", desc: "(To Be Announced)", img: djImg },
+  { title: "J-Metal Band", desc: "(To Be Announced)", img: jmetalImg },
+  { title: "& More Artists", desc: "(To Be Announced)", img: moreArtistsImg },
 ];
 
 const ExpPage1 = () => {
