@@ -18,12 +18,10 @@ const row1 = [
   { title: "Karaoke Rooms", desc: "", img: karaokeImg },
   { title: "Kimono & Yukata Trial", desc: "", img: kimonoImg },
   { title: "Hanbok Trial", desc: "", img: hanbokImg },
+  { title: "Sumo Costume Trial", desc: "", img: sumoImg },
 ];
 const row2 = [
-  { title: "Sumo Costume Trial", desc: "", img: sumoImg },
   { title: "Face Painting", desc: "", img: facePaintImg },
-];
-const row3 = [
   { title: "Temporary & Permanent Tattoos", desc: "", img: tattooImg },
   { title: "Piercings & Color Dreadlocks", desc: "", img: dreadlocksImg },
   { title: "& More", desc: "", img: moreExpImg },
@@ -34,7 +32,7 @@ const Card = ({ item, i, isInView }: { item: { title: string; desc: string; img:
     initial={{ opacity: 0, y: 20 }}
     animate={isInView ? { opacity: 1, y: 0 } : {}}
     transition={{ delay: 0.1 + i * 0.06 }}
-    className="card-inner overflow-hidden group text-center w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+    className="card-inner overflow-hidden group text-center w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)]"
   >
     <div className="w-full h-36 overflow-hidden mb-4 -mt-1 rounded-xl">
       <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
@@ -60,11 +58,8 @@ const ExpPage4 = () => {
             <div className="flex flex-wrap justify-center gap-4 mb-4">
               {row1.map((item, i) => <Card key={item.title} item={item} i={i} isInView={isInView} />)}
             </div>
-            <div className="flex flex-wrap justify-center gap-4 mb-4">
-              {row2.map((item, i) => <Card key={item.title} item={item} i={i + 3} isInView={isInView} />)}
-            </div>
             <div className="flex flex-wrap justify-center gap-4">
-              {row3.map((item, i) => <Card key={item.title} item={item} i={i + 5} isInView={isInView} />)}
+              {row2.map((item, i) => <Card key={item.title} item={item} i={i + 4} isInView={isInView} />)}
             </div>
           </motion.div>
         </div>

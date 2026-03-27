@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-import kpopArtistImg from "@/assets/Live Stage/KPOP ARTIST.jfif.jpeg";
-import jpopArtistImg from "@/assets/Live Stage/JPOP ARTIST.jpg.jpeg";
-import djImg from "@/assets/Live Stage/ANIME AND KPOP DJ.jpg.jpeg";
-import jmetalImg from "@/assets/Live Stage/J METAL ARTIST.jpg.jpeg";
-import moreArtistsImg from "@/assets/Live Stage/MORE ARTISTS.jpg.jpeg";
+import kpopArtistImg from "@/assets/Live Stage/KPOP HEADLINER.jpg.jpeg";
+import jpopArtistImg from "@/assets/Live Stage/JPOP HEADLINER .jpg.jpeg";
+import djImg from "@/assets/Live Stage/ANIME AND KPOP DJ .jpg.jpeg";
+import jmetalImg from "@/assets/Live Stage/J - METAL BAND .jpg.jpeg";
+import moreArtistsImg from "@/assets/Live Stage/& MORE ARTISTS .jpg.jpeg";
 
 const artists = [
   { title: "K-Pop Headliner", desc: "Artist / Band (To Be Announced)", img: kpopArtistImg },

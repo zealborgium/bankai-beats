@@ -40,7 +40,7 @@ const AboutSection = () => {
             {[...marqueeImages, ...marqueeImages, ...marqueeImages, ...marqueeImages].map((img, i) => (
               <div
                 key={i}
-                className="w-64 h-32 rounded-2xl mx-3 overflow-hidden shrink-0"
+                className="w-48 h-36 rounded-2xl mx-3 overflow-hidden shrink-0"
                 style={{ border: '1px solid hsla(0, 0%, 100%, 0.1)', background: 'hsla(0, 0%, 100%, 0.04)', boxShadow: '0 4px 24px hsla(0, 0%, 100%, 0.05)' }}
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
