@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
 import karaokeImg from "@/assets/Experience Arena/KARAOKE ROOMS.jpg.jpeg";
-import kimonoImg from "@/assets/Experience Arena/KIMONO TRIAL.jpg.jpeg";
+import kimonoImg from "@/assets/Experience Arena/kIMONO TRIAL.jpg.jpeg";
 import hanbokImg from "@/assets/Experience Arena/HANBOK TRIAL.jpg.jpeg";
 import sumoImg from "@/assets/Experience Arena/SUMO TRIAL.jpg.jpeg";
 import facePaintImg from "@/assets/Experience Arena/FACE PAINTING.jpg.jpeg";
