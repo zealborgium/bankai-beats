@@ -5,14 +5,14 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-import postersImg from "@/assets/Merch Marketplace/POSTERS & PLUSHIES.jpg.jpeg";
-import jewelleryImg from "@/assets/Merch Marketplace/JEWELLRY.jpg.jpeg";
+import postersImg from "@/assets/Merch Marketplace/POSTER AND PLUSHIES.jpg.jpeg";
+import jewelleryImg from "@/assets/Merch Marketplace/JEWELLERY.jpg.jpeg";
 import albumsImg from "@/assets/Merch Marketplace/ALBUMS.jpg.jpeg";
 import handmadeImg from "@/assets/Merch Marketplace/HANDMADE ITEMS.jpg.jpeg";
 import collectiblesImg from "@/assets/Merch Marketplace/COLLECTIBLES.jpg.jpeg";
 import crystalsImg from "@/assets/Merch Marketplace/CRYSTALS AND CANDLES.jpg.jpeg";
-import thriftImg from "@/assets/Merch Marketplace/THIFT STALLS.jpg.jpeg";
-import moreMerchImg from "@/assets/Merch Marketplace/AND MORE STALLS.jpg.jpeg";
+import thriftImg from "@/assets/Merch Marketplace/THRIFT STALLS.jpg.jpeg";
+import moreMerchImg from "@/assets/Merch Marketplace/& MORE MERCH.jpg.jpeg";
 
 const makeRow = (items: string[]) => items.map(title => ({ title, desc: "", img: "" }));
 

@@ -5,14 +5,14 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-import karaokeImg from "@/assets/Experience Arena/KARAOKE ROOM.jpg.jpeg";
-import kimonoImg from "@/assets/Experience Arena/kIMONO TRIAL.jpg.jpeg";
+import karaokeImg from "@/assets/Experience Arena/KARAOKE ROOMS.jpg.jpeg";
+import kimonoImg from "@/assets/Experience Arena/KIMONO TRIAL.jpg.jpeg";
 import hanbokImg from "@/assets/Experience Arena/HANBOK TRIAL.jpg.jpeg";
-import sumoImg from "@/assets/Experience Arena/SUMO COSTUME TRIAL.jpg.jpeg";
+import sumoImg from "@/assets/Experience Arena/SUMO TRIAL.jpg.jpeg";
 import facePaintImg from "@/assets/Experience Arena/FACE PAINTING.jpg.jpeg";
-import tattooImg from "@/assets/Experience Arena/PERMANENT TATTOS.webp";
-import dreadlocksImg from "@/assets/Experience Arena/COLOURFUL  DREADLOCKS.jpg.jpeg";
-import moreExpImg from "@/assets/Experience Arena/AND MORE EXPERIENCES.jpg.jpeg";
+import tattooImg from "@/assets/Experience Arena/TATTOOS.jpg.jpeg";
+import dreadlocksImg from "@/assets/Experience Arena/COLOURED DREADLOCKS.jpg.jpeg";
+import moreExpImg from "@/assets/Experience Arena/& MORE EXPERIENCES.jpg.jpeg";
 
 const row1 = [
   { title: "Karaoke Rooms", desc: "", img: karaokeImg },

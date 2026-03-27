@@ -7,8 +7,8 @@ import ContactCTA from "@/components/ContactCTA";
 
 import sakeImg from "@/assets/Live Bar/SAKE.jpg.jpeg";
 import riceBeerImg from "@/assets/Live Bar/RICE BEER.jpg.jpeg";
-import cocktailsImg from "@/assets/Live Bar/COCKTAILS.jpg.jpeg";
-import moreBarImg from "@/assets/Live Bar/AND MORE BAR.jpg.jpeg";
+import cocktailsImg from "@/assets/Live Bar/COCKTAIL.jpg.jpeg";
+import moreBarImg from "@/assets/Live Bar/& MORE LIQUOR.jpg.jpeg";
 
 const items = [
   { title: "Sake", desc: "", img: sakeImg },

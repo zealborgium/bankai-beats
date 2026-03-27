@@ -11,11 +11,11 @@ import tempuraImg from "@/assets/Food/TEMPURA.jpg.jpeg";
 import mochiImg from "@/assets/Food/MOCHI.jpg.jpeg";
 import pancakesImg from "@/assets/Food/PANCAKES.jpg.jpeg";
 import kbbqImg from "@/assets/Food/KOREAN BBQ.jpg.jpeg";
-import kfcImg from "@/assets/Food/KOREAN FRIEND CHIKEN.webp";
-import corndogImg from "@/assets/Food/CORN DOG.jpg.jpeg";
+import kfcImg from "@/assets/Food/KOREAN FRIED CHIKEN.jpg.jpeg";
+import corndogImg from "@/assets/Food/CORN DOGS.jpg.jpeg";
 import bibimbapImg from "@/assets/Food/BIBIMBAP.jpg.jpeg";
 import cottonCandyImg from "@/assets/Food/COTTON CANDY.jpg.jpeg";
-import burgerImg from "@/assets/Food/BURGERS AND PIZZA.jpg.jpeg";
+import burgerImg from "@/assets/Food/PIZZA & BURGER.jpg.jpeg";
 import moreFoodImg from "@/assets/Food/& MORE FOOD.jpg.jpeg";
 
 const row1 = [

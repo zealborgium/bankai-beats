@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
+import fanMeetImg from "@/assets/fan meet.png";
+
 const ExpPage6 = () => (
   <div className="min-h-screen text-foreground overflow-x-hidden">
     <Navbar />
@@ -19,7 +21,7 @@ const ExpPage6 = () => (
           className="card-warm text-center flex flex-col items-center"
         >
           <p className="text-base text-muted-foreground leading-relaxed max-w-2xl font-bold uppercase">
-            Close enough to say everything you have been saving up. Fan meet experiences with BANKAI BEATS 2026 headliners are coming. Passes will be announced alongside our full lineup reveal. Watch this space.
+            Get close enough to say everything you have been saving up. Fan meet experiences with BANKAI BEATS 2026 headliners are coming. Passes will be announced alongside our full lineup reveal. Watch this space.
           </p>
           <button
             disabled

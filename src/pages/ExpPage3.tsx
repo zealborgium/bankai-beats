@@ -5,17 +5,17 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import ContactCTA from "@/components/ContactCTA";
 
-import photoboothImg from "@/assets/Entertainment Area/PHOTOBOOTH.webp";
+import photoboothImg from "@/assets/Entertainment Area/PHOTOBOOTH.jpg.jpeg";
 import bouncyImg from "@/assets/Entertainment Area/BOUNCY CASTLE.jpg.jpeg";
 import bullImg from "@/assets/Entertainment Area/MECHANICAL BULL.jpg.jpeg";
 import gatchaImg from "@/assets/Entertainment Area/GATCHA MACHINE.jpg.jpeg";
-import beybladeImg from "@/assets/Entertainment Area/BEYBALDE BATTLE.jpg.jpeg";
+import beybladeImg from "@/assets/Entertainment Area/BEYBLADE BATTLE.jpg.jpeg";
 import ddakjiImg from "@/assets/Entertainment Area/DDAKJI BATTLE.jpg.jpeg";
-import flowImg from "@/assets/Entertainment Area/FLOW ARTISTS.webp";
+import flowImg from "@/assets/Entertainment Area/FLOW ARTIST.jpg.jpeg";
 import animeQuizImg from "@/assets/Entertainment Area/ANIME QUIZ.jpg.jpeg";
 import kpopQuizImg from "@/assets/Entertainment Area/KPOP QUIZ.jpg.jpeg";
 import rpdImg from "@/assets/Entertainment Area/RANDOM PLAY DANCE.jpg.jpeg";
-import moreImg from "@/assets/Entertainment Area/AND MORE ENTERTAINMENTjpg.jpg.jpeg";
+import moreImg from "@/assets/Entertainment Area/& MORE ENTERTAINMENT.jpg.jpeg";
 
 const row1 = [
   { title: "Photobooth", desc: "", img: photoboothImg },
