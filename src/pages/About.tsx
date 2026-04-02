@@ -12,25 +12,14 @@ const values = [
   { title: "Innovation", desc: "We push boundaries in event production, blending cutting-edge tech with grassroots community energy." },
 ];
 
-const team = [
-  { name: "Shashank", role: "Founder & Festival Director", emoji: "🎪" },
-  { name: "Ravi", role: "Chief Operations Officer", emoji: "⚙️" },
-  { name: "Akash", role: "Head — Marketing & Communications", emoji: "📣" },
-  { name: "Adhitya", role: "Head — Revenue & Partnerships", emoji: "💰" },
-  { name: "Vaibhav", role: "Head — Talent & Hospitality", emoji: "🎤" },
-  { name: "Smaran", role: "Head — Operations & Logistics", emoji: "📦" },
-  { name: "Aamir", role: "Head — Production & Security", emoji: "🛡️" },
-];
 
 const About = () => {
   const storyRef = useRef(null);
   const valuesRef = useRef(null);
   const visionRef = useRef(null);
-  const teamRef = useRef(null);
   const storyInView = useInView(storyRef, { once: true, margin: "-80px" });
   const valuesInView = useInView(valuesRef, { once: true, margin: "-80px" });
   const visionInView = useInView(visionRef, { once: true, margin: "-80px" });
-  const teamInView = useInView(teamRef, { once: true, margin: "-80px" });
 
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
@@ -158,44 +147,6 @@ const About = () => {
               <p>
                 The fandom built this culture. We are here to give it the stage it deserves. And we are just getting started.
               </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-10 md:py-14" ref={teamRef}>
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={teamInView ? { opacity: 1, y: 0 } : {}}
-            className="card-warm"
-          >
-            <div className="text-center mb-8">
-              <h2 className="section-title">
-                Meet The <span className="text-secondary glow-text-purple">Team</span>
-              </h2>
-              <p className="text-base text-muted-foreground">
-                The passionate people behind BANKAI BEATS.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              {team.map((member, i) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={teamInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.2 + i * 0.08 }}
-                  className="card-inner text-center w-[calc(50%-8px)] lg:w-[calc(25%-12px)]"
-                >
-                  <div className="w-20 h-20 mx-auto mb-3 flex items-center justify-center rounded-full border-2 border-border bg-muted text-3xl">
-                    {member.emoji}
-                  </div>
-                  <h4 className="font-display font-bold text-base">{member.name}</h4>
-                  <p className="text-xs text-muted-foreground mt-1 font-mono">{member.role}</p>
-                </motion.div>
-              ))}
             </div>
           </motion.div>
         </div>
