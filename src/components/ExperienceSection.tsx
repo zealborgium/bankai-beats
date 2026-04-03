@@ -17,7 +17,7 @@ const ExperienceSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="py-10 md:py-14" ref={ref}>
+    <section id="experience" className="py-6 md:py-8" ref={ref}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -59,3 +59,6 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
+
+
+

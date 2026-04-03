@@ -28,7 +28,7 @@ const ExpPage1 = () => {
       <Navbar />
       <PageHero title="Live" highlight="Stage" subtitle="The heart of BANKAI BEATS. 10+ hours of non-stop live performances on the main stage." centered />
 
-      <section className="py-10 md:py-14" ref={ref}>
+      <section className="py-6 md:py-8" ref={ref}>
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -69,3 +69,6 @@ const ExpPage1 = () => {
 };
 
 export default ExpPage1;
+
+
+

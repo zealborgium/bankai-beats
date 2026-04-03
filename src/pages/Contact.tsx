@@ -23,7 +23,7 @@ const Contact = () => {
       <ContactForm page="Contact" />
 
       {/* Direct connect section */}
-      <section className="py-10 md:py-14">
+      <section className="py-6 md:py-8">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -70,3 +70,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+

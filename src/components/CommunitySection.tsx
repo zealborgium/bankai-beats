@@ -27,7 +27,7 @@ const CommunitySection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="community" className="py-10 md:py-14" ref={ref}>
+    <section id="community" className="py-6 md:py-8" ref={ref}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -110,3 +110,6 @@ const CommunitySection = () => {
 };
 
 export default CommunitySection;
+
+
+

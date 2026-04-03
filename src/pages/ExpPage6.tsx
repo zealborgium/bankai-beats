@@ -11,7 +11,7 @@ const ExpPage6 = () => (
     <Navbar />
     <PageHero title="Fan" highlight="Meetup" subtitle="Exclusive access to meet international headliners up close. Limited spots." centered />
 
-    <section className="py-10 md:py-14">
+    <section className="py-6 md:py-8">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,3 +40,6 @@ const ExpPage6 = () => (
 );
 
 export default ExpPage6;
+
+
+

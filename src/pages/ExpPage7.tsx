@@ -53,7 +53,7 @@ const ExpPage7 = () => {
       <Navbar />
       <PageHero title="Merch" highlight="Marketplace" subtitle="40+ vendors with exclusive anime and K-pop merchandise, collectibles and more." centered />
 
-      <section className="py-10 md:py-14" ref={ref}>
+      <section className="py-6 md:py-8" ref={ref}>
         <div className="section-container">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} className="card-warm">
             <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
@@ -74,3 +74,6 @@ const ExpPage7 = () => {
 };
 
 export default ExpPage7;
+
+
+

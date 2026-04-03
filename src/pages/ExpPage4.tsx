@@ -51,7 +51,7 @@ const ExpPage4 = () => {
       <Navbar />
       <PageHero title="Live" highlight="Experience" subtitle="Kimono, yukata, hanbok trials, face painting, tattoos and flow artists." centered />
 
-      <section className="py-10 md:py-14" ref={ref}>
+      <section className="py-6 md:py-8" ref={ref}>
         <div className="section-container">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} className="card-warm">
             <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
@@ -72,3 +72,6 @@ const ExpPage4 = () => {
 };
 
 export default ExpPage4;
+
+
+

@@ -19,7 +19,7 @@ const PartnersSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="partners" className="py-10 md:py-14" ref={ref}>
+    <section id="partners" className="py-6 md:py-8" ref={ref}>
       <div className="section-container">
         {/* Why this festival matters */}
         <div className="card-warm mb-8">
@@ -113,3 +113,6 @@ const PartnersSection = () => {
 };
 
 export default PartnersSection;
+
+
+

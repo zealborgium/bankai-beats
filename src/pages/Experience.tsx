@@ -36,7 +36,7 @@ const Experience = () => {
         subtitle="8 immersive zones, 12 hours of non-stop entertainment, 1 festival built entirely around the culture you love and memories that last a lifetime."
       />
 
-      <section className="py-10 md:py-14" ref={ref}>
+      <section className="py-6 md:py-8" ref={ref}>
         <div className="section-container">
           <div className="card-warm">
             <h2 className="section-label mb-6 text-primary">Festival Zones</h2>
@@ -82,7 +82,7 @@ const Experience = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-10 md:py-14">
+      <section className="py-6 md:py-8">
         <div className="section-container text-center">
           <div className="card-warm">
             <h2 className="section-title">Ready to <span className="text-secondary glow-text-purple">Experience</span> It?</h2>
@@ -100,3 +100,5 @@ const Experience = () => {
 };
 
 export default Experience;
+
+

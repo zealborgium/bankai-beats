@@ -163,3 +163,6 @@ const PartnerDialog = ({ open, onOpenChange, partnerType }: PartnerDialogProps) 
 };
 
 export default PartnerDialog;
+
+
+

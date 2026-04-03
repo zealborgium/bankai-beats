@@ -10,7 +10,7 @@ const ExpPage2 = () => (
     <PageHero title="" highlight="Competitions" subtitle="India's most transparent cosplay championship and K-pop dance battle on the main stage." centered />
 
     {/* Cosplay Championship */}
-    <section className="py-10 md:py-14">
+    <section className="py-6 md:py-8">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,7 +37,7 @@ const ExpPage2 = () => (
     </section>
 
     {/* K-Pop Group Dance Battle */}
-    <section className="py-10 md:py-14">
+    <section className="py-6 md:py-8">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -69,3 +69,6 @@ const ExpPage2 = () => (
 );
 
 export default ExpPage2;
+
+
+

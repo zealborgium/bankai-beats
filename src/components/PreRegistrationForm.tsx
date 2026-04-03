@@ -38,6 +38,11 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
       setFormData({ ...formData, [name]: digits });
       return;
     }
+    if (name === "Name") {
+      const cleaned = value.replace(/[^a-zA-Z0-9 ]/g, "").slice(0, 30);
+      setFormData({ ...formData, [name]: cleaned });
+      return;
+    }
     if (name === "Age") {
       const digits = value.replace(/\D/g, "").slice(0, 3);
       setFormData({ ...formData, [name]: digits });
@@ -203,3 +208,6 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
 };
 
 export default PreRegistrationForm;
+
+
+

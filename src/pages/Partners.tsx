@@ -51,7 +51,7 @@ const Partners = () => {
       />
 
       {/* Stats */}
-      <section className="py-10 md:py-14">
+      <section className="py-6 md:py-8">
         <div className="section-container">
           <div className="card-warm">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -75,7 +75,7 @@ const Partners = () => {
       </section>
 
       {/* Opportunities */}
-      <section className="py-10 md:py-14" ref={ref}>
+      <section className="py-6 md:py-8" ref={ref}>
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -118,7 +118,7 @@ const Partners = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-10 md:py-14">
+      <section className="py-6 md:py-8">
         <div className="section-container text-center">
           <div className="card-warm">
             <h2 className="section-title">Let's Build This <span className="text-secondary glow-text-purple">Together</span></h2>
@@ -152,3 +152,6 @@ const Partners = () => {
 };
 
 export default Partners;
+
+
+

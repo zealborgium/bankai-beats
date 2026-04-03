@@ -13,7 +13,7 @@ const JoinTheTeam = () => (
       subtitle="Be part of the team building India's first Anime & K-Pop Music Festival. We're looking for passionate people who live and breathe the culture."
     />
 
-    <section className="py-10 md:py-14">
+    <section className="py-6 md:py-8">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -53,3 +53,6 @@ const JoinTheTeam = () => (
 );
 
 export default JoinTheTeam;
+
+
+

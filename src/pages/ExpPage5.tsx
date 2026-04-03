@@ -60,7 +60,7 @@ const ExpPage5 = () => {
       <Navbar />
       <PageHero title="Food" highlight="Court" subtitle="25+ curated stalls with authentic Japanese and Korean cuisine." centered />
 
-      <section className="py-10 md:py-14" ref={ref}>
+      <section className="py-6 md:py-8" ref={ref}>
         <div className="section-container">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} className="card-warm">
             <p className="text-xs italic text-muted-foreground text-center mb-6">Note: All images used are for representation purposes only.</p>
@@ -84,3 +84,6 @@ const ExpPage5 = () => {
 };
 
 export default ExpPage5;
+
+
+

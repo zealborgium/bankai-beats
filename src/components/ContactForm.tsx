@@ -49,9 +49,13 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
       setFormData({ ...formData, phone: digits });
       return;
     }
+    if (name === "name") {
+      const cleaned = value.replace(/[^a-zA-Z0-9 ]/g, "").slice(0, 30);
+      setFormData({ ...formData, name: cleaned });
+      return;
+    }
     setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -86,7 +90,7 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
   const inputClasses = "w-full bg-muted border-2 border-border rounded-full px-4 py-3 text-sm text-foreground focus:border-primary focus:outline-none transition-all font-body";
 
   return (
-    <section id="interest-form" className="py-10 md:py-14" ref={ref}>
+    <section id="interest-form" className="py-6 md:py-8" ref={ref}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -269,3 +273,6 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
 };
 
 export default ContactForm;
+
+
+

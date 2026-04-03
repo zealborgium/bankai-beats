@@ -62,7 +62,7 @@ const ExpPage3 = () => {
       <Navbar />
       <PageHero title="Entertainment" highlight="Arena" subtitle="Gaming, karaoke, mechanical bull, bouncy castle and more — fun in every corner." centered />
 
-      <section className="py-10 md:py-14" ref={ref}>
+      <section className="py-6 md:py-8" ref={ref}>
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -90,3 +90,6 @@ const ExpPage3 = () => {
 };
 
 export default ExpPage3;
+
+
+

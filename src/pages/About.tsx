@@ -31,7 +31,7 @@ const About = () => {
       />
 
       {/* Dellusion Entertainment */}
-      <section className="py-10 md:py-14" ref={storyRef}>
+      <section className="py-6 md:py-8" ref={storyRef}>
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ const About = () => {
       </section>
 
       {/* What is Bankai Beats */}
-      <section className="py-10 md:py-14">
+      <section className="py-6 md:py-8">
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -94,7 +94,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-10 md:py-14" ref={valuesRef}>
+      <section className="py-6 md:py-8" ref={valuesRef}>
         <div className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -124,7 +124,7 @@ const About = () => {
       </section>
 
       {/* Vision */}
-      <section className="py-10 md:py-14" ref={visionRef}>
+      <section className="py-6 md:py-8" ref={visionRef}>
         <div className="section-container text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -153,7 +153,7 @@ const About = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-10 md:py-14">
+      <section className="py-6 md:py-8">
         <div className="section-container">
           <div className="card-warm">
             <h2 className="section-title text-center mb-8">
@@ -191,3 +191,6 @@ const About = () => {
 };
 
 export default About;
+
+
+
