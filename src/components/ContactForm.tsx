@@ -2,6 +2,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { CheckCircle, X } from "lucide-react";
+import PhoneInput from "@/components/PhoneInput";
 
 const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_33D4K8X8Q0jfYnCtmRndqf6-zm4wwn0JNjygoW031batBGg6Gg7ywJGqaRETPmb8-g/exec";
 const PARTNERS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJhd5l9OUn8G0Ou-M61XIY7Ot7-o26O2e4hKDxXz3ezImp6z4e8_Qb8M5fCX8gj0Ud/exec";
@@ -29,6 +30,7 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [emailError, setEmailError] = useState("");
+  const [dialCode, setDialCode] = useState("+91");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,6 +56,11 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
       setFormData({ ...formData, name: cleaned });
       return;
     }
+    if (name === "company") {
+      const cleaned = value.replace(/[^a-zA-Z0-9 ]/g, "").slice(0, 30);
+      setFormData({ ...formData, company: cleaned });
+      return;
+    }
     setFormData({ ...formData, [name]: value });
   };
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,6 +74,7 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          phone: dialCode + formData.phone,
           page,
         }),
       });
@@ -147,17 +155,11 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
                 <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">
                   Phone *
                 </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  required
+                <PhoneInput
                   value={formData.phone}
-                  onChange={handleChange}
-                  className={inputClasses}
-                  placeholder="9876543210"
-                  maxLength={10}
-                  pattern="\d{10}"
-                  title="Please enter a 10-digit phone number"
+                  onChange={(val, dial) => { setFormData(f => ({ ...f, phone: val })); setDialCode(dial); }}
+                  required
+                  inputClasses={inputClasses}
                 />
               </div>
               <div>

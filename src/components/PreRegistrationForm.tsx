@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { X, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import PhoneInput from "@/components/PhoneInput";
 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbwLo6emgCM9vhgdrg40Tc6XnRWWy4Qeg9Kpr84d0i2pXzBE6dCkyZSPpePgaqzwRcy_/exec";
@@ -16,6 +17,7 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [ageError, setAgeError] = useState("");
+  const [dialCode, setDialCode] = useState("+91");
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
@@ -59,7 +61,7 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, page: "Pre-Registration" }),
+        body: JSON.stringify({ ...formData, "Contact/WhatsApp": dialCode + formData["Contact/WhatsApp"], page: "Pre-Registration" }),
       });
       setShowSuccess(true);
       setFormData({ Name: "", Email: "", "Contact/WhatsApp": "", Age: "", Gender: "", City: "", Fandom: "" });
@@ -128,7 +130,12 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
                     </div>
                     <div>
                       <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">Contact / WhatsApp *</label>
-                      <input type="tel" name="Contact/WhatsApp" required value={formData["Contact/WhatsApp"]} onChange={handleChange} className={inputClasses} placeholder="9876543210" maxLength={10} pattern="\d{10}" title="Please enter a 10-digit number" />
+                      <PhoneInput
+                        value={formData["Contact/WhatsApp"]}
+                        onChange={(val, dial) => { setFormData(f => ({ ...f, "Contact/WhatsApp": val })); setDialCode(dial); }}
+                        required
+                        inputClasses={inputClasses}
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-mono uppercase tracking-wider text-foreground mb-2">Age *</label>
