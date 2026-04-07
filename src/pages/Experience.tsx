@@ -5,12 +5,13 @@ import Footer from "@/components/Footer";
 import ContactCTA from "@/components/ContactCTA";
 import PageHero from "@/components/PageHero";
 import stagImg from "@/assets/Stage_imgupscaler.ai_General_8K.jpg";
-import merchImg from "@/assets/merch.jpeg";
-import barImg from "@/assets/bar.png";
-import fanMeetImg from "@/assets/fan meet.png";
-import foodCourtImg from "@/assets/food court.png";
-import liveExpImg from "@/assets/live experience.png";
-import cosplayImg from "@/assets/cosplay.png";
+
+const cosplayImg = "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=600&h=450&fit=crop";
+const merchImg = "https://images.unsplash.com/photo-1526478806334-5fd488fcaabc?w=600&h=450&fit=crop";
+const barImg = "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=450&fit=crop";
+const fanMeetImg = "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=450&fit=crop";
+const foodCourtImg = "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=450&fit=crop";
+const liveExpImg = "https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&h=450&fit=crop";
 
 const zones = [
   { title: "Live Music", desc: "The heart of BANKAI BEATS. Our main stage runs for 10+ hours of non-stop action. International K-pop and J-pop artists. A live international DJ set. India's best anime and K-pop cover performers. Live band performances. Every performance backed by full festival-grade production with massive LED walls, intelligent lighting, lasers, and sound that hits you in the chest.", details: "This is not a convention side stage. This is the real thing.", img: stagImg },

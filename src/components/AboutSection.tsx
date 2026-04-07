@@ -3,11 +3,12 @@ import { useRef } from "react";
 import heroConcert from "@/assets/hero-concert.jpg";
 import marqueeTheater from "@/assets/marquee-theater.jpg";
 import heroGaming from "@/assets/hero-gaming.jpg";
-import zoneFood from "@/assets/zone-food.jpg";
 import heroBand from "@/assets/hero-band.jpg";
 import heroCosplay from "@/assets/hero-cosplay.jpg";
 import heroFestival from "@/assets/hero-festival.jpg";
-import zoneKpop from "@/assets/zone-kpop.jpg";
+
+const zoneFood = "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=300&fit=crop";
+const zoneKpop = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=300&fit=crop";
 
 const marqueeImages = [
   { src: heroConcert, alt: "Live music" },
