@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail } from "lucide-react";
+import { Instagram, Mail, Linkedin } from "lucide-react";
 import { toast } from "sonner";
 import { useState } from "react";
 import dellusionLogo from "@/assets/dellusion-full-logo.png";
@@ -38,6 +38,7 @@ const Footer = () => {
           <p className="text-sm font-mono uppercase tracking-wider text-neon-purple glow-text-purple mb-1">Connect</p>
           <div className="flex items-center gap-4">
             <a href="https://www.instagram.com/bankaibeatsfest/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={20} /></a>
+            <a href="https://www.linkedin.com/company/dellusion-entertainment/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={20} /></a>
             <span onClick={copyEmail} className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"><Mail size={20} /></span>
           </div>
         </div>
