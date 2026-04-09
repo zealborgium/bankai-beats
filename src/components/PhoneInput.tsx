@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface Country {
   name: string;
@@ -9,14 +9,14 @@ interface Country {
 
 const countries: Country[] = [
   { name: "India", code: "IN", dial: "+91", digits: 10 },
+  { name: "South Korea", code: "KR", dial: "+82", digits: 10 },
+  { name: "Japan", code: "JP", dial: "+81", digits: 10 },
   { name: "USA", code: "US", dial: "+1", digits: 10 },
   { name: "UK", code: "GB", dial: "+44", digits: 10 },
   { name: "Australia", code: "AU", dial: "+61", digits: 9 },
   { name: "Canada", code: "CA", dial: "+1", digits: 10 },
   { name: "UAE", code: "AE", dial: "+971", digits: 9 },
   { name: "Singapore", code: "SG", dial: "+65", digits: 8 },
-  { name: "Japan", code: "JP", dial: "+81", digits: 10 },
-  { name: "South Korea", code: "KR", dial: "+82", digits: 10 },
   { name: "Germany", code: "DE", dial: "+49", digits: 10 },
   { name: "France", code: "FR", dial: "+33", digits: 9 },
   { name: "Italy", code: "IT", dial: "+39", digits: 10 },
@@ -68,11 +68,37 @@ interface PhoneInputProps {
 
 const PhoneInput = ({ value, onChange, required, inputClasses }: PhoneInputProps) => {
   const [selected, setSelected] = useState<Country>(countries[0]);
+  const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLInputElement>(null);
 
-  const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const country = countries.find(c => c.code === e.target.value) || countries[0];
+  const filtered = countries.filter(c =>
+    c.name.toLowerCase().startsWith(search.toLowerCase()) ||
+    c.code.toLowerCase().startsWith(search.toLowerCase()) ||
+    c.dial.startsWith(search)
+  );
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setOpen(false);
+        setSearch("");
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (open) setTimeout(() => searchRef.current?.focus(), 50);
+  }, [open]);
+
+  const select = (country: Country) => {
     setSelected(country);
     onChange("", country.dial);
+    setOpen(false);
+    setSearch("");
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,17 +108,48 @@ const PhoneInput = ({ value, onChange, required, inputClasses }: PhoneInputProps
 
   return (
     <div className="flex gap-2">
-      <select
-        value={selected.code}
-        onChange={handleCountryChange}
-        className="bg-muted border-2 border-border rounded-full px-3 py-3 text-sm text-foreground focus:border-primary focus:outline-none transition-all font-body w-20 shrink-0"
-      >
-        {countries.map(c => (
-          <option key={c.code + c.dial} value={c.code}>
-            {c.dial}
-          </option>
-        ))}
-      </select>
+      <div className="relative shrink-0" ref={dropdownRef}>
+        <button
+          type="button"
+          onClick={() => setOpen(v => !v)}
+          className="bg-muted border-2 border-border rounded-full px-3 py-3 text-sm text-foreground focus:border-primary focus:outline-none transition-all font-body w-24 flex items-center justify-between gap-1"
+        >
+          <span>{selected.dial} {selected.code}</span>
+          <svg className={`w-3 h-3 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+        </button>
+
+        {open && (
+          <div className="absolute top-full left-0 mt-1 z-50 w-56 rounded-2xl overflow-hidden shadow-xl" style={{ background: 'hsla(0,0%,10%,0.97)', border: '1px solid hsla(0,0%,100%,0.12)', backdropFilter: 'blur(16px)' }}>
+            <div className="p-2">
+              <input
+                ref={searchRef}
+                type="text"
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                placeholder="Search country..."
+                className="w-full bg-muted border border-border rounded-full px-3 py-2 text-xs text-foreground focus:outline-none focus:border-primary"
+              />
+            </div>
+            <div className="max-h-48 overflow-y-auto">
+              {filtered.length === 0 ? (
+                <p className="text-xs text-muted-foreground text-center py-3">No results</p>
+              ) : filtered.map(c => (
+                <button
+                  key={c.code + c.dial}
+                  type="button"
+                  onClick={() => select(c)}
+                  className={`w-full text-left px-4 py-2 text-sm flex items-center gap-2 transition-colors hover:bg-white/10 ${selected.code === c.code && selected.dial === c.dial ? "text-primary" : "text-white/80"}`}
+                >
+                  <span className="font-mono w-12 shrink-0">{c.dial}</span>
+                  <span className="font-mono text-xs text-white/50 w-8 shrink-0">{c.code}</span>
+                  <span className="text-xs truncate">{c.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
       <input
         type="tel"
         required={required}
