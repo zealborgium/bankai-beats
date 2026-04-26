@@ -35,7 +35,7 @@ The application utilizes a Decoupled Data Ingestion Pattern to support internal 
 
 ## Getting Started
 
-## Prequisites
+### Prequisites
 - Node.js (LTS version recommended)
 - npm or yarn
 
@@ -47,6 +47,7 @@ The application utilizes a Decoupled Data Ingestion Pattern to support internal 
    ```bash
    npm install
 3. Run in development mode:
+   ```bash
    npm run dev
 
 ## Future Scope
