@@ -4,8 +4,10 @@ import { toast } from "sonner";
 import { CheckCircle, X } from "lucide-react";
 import PhoneInput from "@/components/PhoneInput";
 
-const CONTACT_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_33D4K8X8Q0jfYnCtmRndqf6-zm4wwn0JNjygoW031batBGg6Gg7ywJGqaRETPmb8-g/exec";
-const PARTNERS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJhd5l9OUn8G0Ou-M61XIY7Ot7-o26O2e4hKDxXz3ezImp6z4e8_Qb8M5fCX8gj0Ud/exec";
+// Backend API endpoint — the server handles routing to the correct GAS script.
+const API_URL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api/contact`
+  : "/api/contact";
 
 const interestOptions = [
   "Investor",
@@ -68,16 +70,21 @@ const ContactForm = ({ page = "Homepage", excludeOptions = [], heading, usePartn
     setIsSubmitting(true);
 
     try {
-      await fetch(usePartnersSheet ? PARTNERS_SCRIPT_URL : CONTACT_SCRIPT_URL, {
+      const res = await fetch(API_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
           phone: dialCode + formData.phone,
           page,
+          usePartnersSheet,
         }),
       });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.message || "Submission failed");
+      }
 
       setShowSuccess(true);
       setFormData({

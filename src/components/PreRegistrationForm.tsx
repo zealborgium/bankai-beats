@@ -4,8 +4,11 @@ import { X, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 import PhoneInput from "@/components/PhoneInput";
 
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwLo6emgCM9vhgdrg40Tc6XnRWWy4Qeg9Kpr84d0i2pXzBE6dCkyZSPpePgaqzwRcy_/exec";
+// Backend API endpoint — the server handles the GAS dual-write internally.
+// Falls back to the Vite proxy in development (see vite.config.ts).
+const API_URL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api/pre-registration`
+  : "/api/pre-registration";
 
 interface PreRegistrationFormProps {
   open: boolean;
@@ -57,12 +60,26 @@ const PreRegistrationForm = ({ open, onClose }: PreRegistrationFormProps) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
+      const res = await fetch(API_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, "Contact/WhatsApp": dialCode + formData["Contact/WhatsApp"], page: "Pre-Registration" }),
+        body: JSON.stringify({
+          ...formData,
+          "Contact/WhatsApp": dialCode + formData["Contact/WhatsApp"],
+          page: "Pre-Registration",
+        }),
       });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        // Surface duplicate-email error specifically
+        if (res.status === 409) {
+          toast.error(err.message || "This email is already pre-registered.");
+          return;
+        }
+        throw new Error(err.message || "Submission failed");
+      }
+
       setShowSuccess(true);
       setFormData({ Name: "", Email: "", "Contact/WhatsApp": "", Age: "", Gender: "", City: "", Fandom: "" });
     } catch {

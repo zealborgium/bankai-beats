@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+
+# Seed / test data scripts — local dev only, not for production
+src/db/seed.js
+src/db/seed2.js
